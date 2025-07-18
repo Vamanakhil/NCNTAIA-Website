@@ -1,0 +1,256 @@
+import ConferenceLayout from "@/components/ui/layout/conf-layout"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Building, Award, ExternalLink } from "lucide-react"
+import Image from "next/image"
+
+export default function SpeakersPage() {
+  const keynoteSpakers = [
+  {
+  name: "Dr. Raees A. Khan",
+  title: "Professor & Head, Department of Information Technology",
+  organization: "Babasaheb Bhimrao Ambedkar University, Lucknow",
+  image: "/dr-raees-khan.jpg",
+  expertise: ["Software Engineering", "Software Quality", "Software Security", "Software Reliability"],
+  bio: "Dr. Raees A. Khan is a distinguished professor with over 24 years of teaching and research experience. He has led significant research projects, developed validated metrics frameworks for software quality, and serves as the Director of the University Institute of Engineering and Technology at BBAU.",
+  talk: "Quantification and Estimation in Software Quality: Insights and Innovations"
+},
+{
+  name: "Dr. Kumar Eswaran",
+  title: "CEO",
+  organization: "Altech Power and Energy Systems, Hyderabad",
+  image: "/kumar-eswaran.jpg",
+  expertise: ["Mathematical Physics", "Computational Engineering", "Power Systems", "Machine Learning"],
+  bio: "Dr. Kumar Eswaran is known for his pivotal contributions in mathematical physics, including work on the Riemann Hypothesis. He has held roles in R&D at BHEL and academia, and is currently CEO at Altech Power and Energy Systems, focusing on advanced computing in power and energy industries.",
+  talk: "Interdisciplinary Problem Solving: From Mathematical Physics to Applied Engineering"
+},
+{
+  name: "Dr. Rajiv Misra",
+  title: "Professor, Department of Computer Science and Engineering",
+  organization: "Indian Institute of Technology (IIT) Patna",
+  image: "/rajiv-misra.jpg",
+  expertise: ["Wireless Networks", "Distributed Algorithms", "Cloud Computing", "Sensor Networks"],
+  bio: "Dr. Rajiv Misra has published over 70 papers in top journals and conferences on topics related to wireless networks, distributed systems, and cloud computing. He is a mentor to multiple PhD students and has significant academic contributions, including book chapters and editorial roles in leading publications.",
+  talk: "Distributed Intelligence: Advances in Sensor Networks and Cloud Computing"
+},
+{
+  name: "Dr. Saroj Kumar Biswas",
+  title: "Associate Professor, Computer Science and Engineering",
+  organization: "National Institute of Technology (NIT) Silchar",
+  image: "/saroj-biswas.jpg",
+  expertise: ["Artificial Intelligence", "Machine Learning", "Image Processing", "Deep Learning", "Data Science"],
+  bio: "Dr. Saroj Kumar Biswas has guided more than 19 doctoral students and completed significant sponsored R&D projects. With over 180 publications, his research spans AI, machine learning, and data science, emphasizing practical solutions and explainable AI.",
+  talk: "Explainable Artificial Intelligence: Bridging Trust and Technology in Smart Systems"
+},
+{
+  name: "Dr. Raju Bhukya",
+  title: "Associate Professor, Computer Science and Engineering",
+  organization: "National Institute of Technology (NIT) Warangal",
+  image: "/raju-bhukya.jpg",
+  expertise: ["Data Mining", "Machine Learning", "Big Data Analytics"],
+  bio: "Dr. Raju Bhukya serves as Associate Professor and In-charge of the Center for Continuing Education at NIT Warangal. His research focuses on the integration of data mining, big data analytics, and machine learning for cutting-edge technology solutions.",
+  talk: "Harnessing Big Data Analytics for Societal Transformation"
+},
+{
+  name: "Dr. Lalit Kumar Awasthi",
+  title: "Professor, CSE & Director (on deputation)",
+  organization: "National Institute of Technology, Hamirpur / Dr. B. R. Ambedkar NIT Jalandhar",
+  image: <img src="/IMG/imgs/Lalith-kumar-awasthi.jpg" alt="Lalith Kumar Awasthi" />,
+  expertise: ["Computer Science", "Academic Administration", "Network Security"],
+  bio: "Dr. Lalit Kumar Awasthi is a senior academician and administrator with over three decades of experience. He has played a foundational role in setting up computer science departments, infrastructure, and laboratories at major Indian institutions, and is a noted expert in network security.",
+  talk: "Evolution of Computer Science Education in India: Challenges and Opportunities"
+},
+{
+  name: "Dr. Chandra Sekhar Jatoth",
+  title: "Assistant Professor, Information Technology",
+  organization: "National Institute of Technology (NIT) Raipur",
+  image: "/ncntaia/ncntaia-website/src/app/imgs/Chandra-Sekhar-jatoth.jpg",
+  expertise: ["Artificial Intelligence", "Image Processing"],
+  bio: "Dr. Chandra Sekhar Jatoth is noted among the top 2% scientists worldwide, focusing on artificial intelligence and image processing. He has contributed to national projects and advanced technical education through research and committee leadership.",
+  talk: "AI for Transformative Societal Impact: Opportunities in Image Processing"
+}
+
+]
+
+
+  const invitedSpakers = [
+  {
+    name: "Dr. Sarah Johnson",
+    title: "Senior Research Scientist",
+    organization: "Google DeepMind",
+    expertise: ["Reinforcement Learning", "Robotics"],
+    talk: "Advances in Reinforcement Learning for Autonomous Systems",
+  },
+  {
+    name: "Prof. Michael Chen",
+    title: "Professor of Computer Science",
+    organization: "Stanford University",
+    expertise: ["Computer Vision", "Medical AI"],
+    talk: "AI in Healthcare: From Diagnosis to Treatment",
+  },
+  {
+    name: "Dr. Lisa Wang",
+    title: "Principal Data Scientist",
+    organization: "Amazon Web Services",
+    expertise: ["Cloud AI", "MLOps"],
+    talk: "Scaling AI in the Cloud: Best Practices and Challenges",
+  },
+  {
+    name: "Dr. Ravi Krishnan",
+    title: "Research Director",
+    organization: "NVIDIA AI Research",
+    expertise: ["GPU Computing", "Deep Learning"],
+    talk: "Accelerating AI with Advanced Computing Architectures",
+  }
+]
+
+
+  return (
+    <ConferenceLayout
+      title="Speakers"
+      subtitle="Meet our distinguished speakers who are leading experts in AI and emerging technologies"
+    >
+      <div className="max-w-6xl mx-auto space-y-12">
+        {/* Keynote Speakers */}
+        <section>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Keynote Speakers</h2>
+            <p className="text-lg text-slate-600">Renowned experts who will deliver inspiring keynote presentations</p>
+          </div>
+
+          <div className="space-y-8">
+            {keynoteSpakers.map((speaker, index) => (
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="grid md:grid-cols-4 gap-6">
+                    <div className="md:col-span-1">
+                      <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-4">
+                        <Image
+                          src={speaker.image || "/placeholder.svg"}
+                          alt={speaker.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {speaker.expertise.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="secondary" className="text-xs">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="md:col-span-3 space-y-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-800 mb-2">{speaker.name}</h3>
+                        <div className="flex items-center gap-2 text-slate-600 mb-1">
+                          <Award className="w-4 h-4" />
+                          <span className="font-medium">{speaker.title}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-600">
+                          <Building className="w-4 h-4" />
+                          <span>{speaker.organization}</span>
+                        </div>
+                      </div>
+
+                      <div className="bg-blue-50 p-4 rounded-lg">
+                        <h4 className="font-semibold text-slate-800 mb-2">Keynote Talk:</h4>
+                        <p className="text-slate-700 font-medium">{speaker.talk}</p>
+                      </div>
+
+                      <p className="text-slate-600 leading-relaxed">{speaker.bio}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Invited Speakers */}
+        <section>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Invited Speakers</h2>
+            <p className="text-lg text-slate-600">
+              Distinguished researchers and industry leaders sharing their expertise
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {invitedSpakers.map((speaker, index) => (
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <CardHeader>
+                  <CardTitle className="text-xl text-slate-800">{speaker.name}</CardTitle>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <Award className="w-4 h-4" />
+                      <span className="text-sm">{speaker.title}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <Building className="w-4 h-4" />
+                      <span className="text-sm">{speaker.organization}</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {speaker.expertise.map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant="outline" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-800 mb-2 text-sm">Talk:</h4>
+                    <p className="text-slate-700 text-sm font-medium">{speaker.talk}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Call for Speakers */}
+        <section>
+          <Card className="shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
+            <CardHeader>
+              <CardTitle className="text-2xl text-slate-800 text-center flex items-center justify-center gap-3">
+                <ExternalLink className="w-6 h-6 text-blue-600" />
+                Become a Speaker
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <p className="text-lg text-slate-600">
+                Are you an expert in AI or related technologies? We welcome proposals for technical talks and
+                presentations.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="p-4 bg-white rounded-lg shadow-sm">
+                  <h4 className="font-semibold text-slate-800 mb-2">Technical Talks</h4>
+                  <p className="text-sm text-slate-600">Share your research findings and technical innovations</p>
+                </div>
+                <div className="p-4 bg-white rounded-lg shadow-sm">
+                  <h4 className="font-semibold text-slate-800 mb-2">Industry Insights</h4>
+                  <p className="text-sm text-slate-600">Present real-world applications and case studies</p>
+                </div>
+                <div className="p-4 bg-white rounded-lg shadow-sm">
+                  <h4 className="font-semibold text-slate-800 mb-2">Panel Discussions</h4>
+                  <p className="text-sm text-slate-600">Participate in expert panels on emerging topics</p>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <p className="text-slate-600 mb-4">
+                  <strong>Interested in speaking?</strong> Send your proposal including topic, abstract, and brief bio
+                  to:
+                </p>
+                <p className="font-mono text-blue-600 text-lg">ncntaia-2025@sreenidhi.edu.in</p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
+    </ConferenceLayout>
+  )
+}
