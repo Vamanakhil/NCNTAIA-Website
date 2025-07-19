@@ -33,7 +33,7 @@ export default function ConferenceHomepage() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 -z-50">
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
@@ -129,16 +129,16 @@ export default function ConferenceHomepage() {
 
       
       {/* Hero Section */}
-      <main className="relative z-10 min-h-screen flex items-center justify-center px-4 pt-20">
-        <div className="text-center max-w-4xl mx-auto">
+      <main className="relative min-h-screen flex items-center justify-center px-4 pt-20">
+        <div className="text-center max-w-4xl mx-auto mt-20">
           <h1
-            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000 ${
+            className={`text-4xl md:text-xl lg:text-7xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000 ${
               isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "500ms" }}
           >
             <span className="drop-shadow-2xl">
-              National Conference on{" "}
+              National Conference on{" "} 
               <span className="text-blue-400">Next-Gen Technologies</span> in AI Applications
             </span>
           </h1>
