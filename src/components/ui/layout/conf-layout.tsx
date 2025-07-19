@@ -32,7 +32,7 @@ export default function ConferenceLayout({ children, title, subtitle }: Conferen
       
       {/* 🔹 Announcement Bar */}
       <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
-        National Conference on Next-Gen Technologies in AI Applications | September 20–21, 2025 | SNIST Hyderabad, India and Online
+        National Conference on Next-Gen Technologies in AI Applications | September 11–12, 2025 | SNIST Hyderabad, India and Online
       </div>
 
       {/* 🔹 Logo Strip */}
