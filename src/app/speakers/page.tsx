@@ -1,3 +1,5 @@
+"use client"
+
 import ConferenceLayout from "@/components/ui/layout/conf-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +13,7 @@ export default function SpeakersPage() {
       name: "Dr. Raees A. Khan",
       title: "Professor & Head, Department of Information Technology",
       organization: "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      image: "/dr-raees-khan.jpg",
+      image: "/IMG/imgs/Prof-Raees-Khan.jpg",
       expertise: ["Software Engineering", "Software Quality", "Software Security", "Software Reliability"],
       bio: "Dr. Raees A. Khan is a distinguished professor with over 24 years of teaching and research experience. He has led significant research projects, developed validated metrics frameworks for software quality, and serves as the Director of the University Institute of Engineering and Technology at BBAU.",
       talk: "Quantification and Estimation in Software Quality: Insights and Innovations"
@@ -20,7 +22,7 @@ export default function SpeakersPage() {
       name: "Dr. Kumar Eswaran",
       title: "CEO",
       organization: "Altech Power and Energy Systems, Hyderabad",
-      image: "/kumar-eswaran.jpg",
+      image: "/IMG/imgs/eshwaran.jpg",
       expertise: ["Mathematical Physics", "Computational Engineering", "Power Systems", "Machine Learning"],
       bio: "Dr. Kumar Eswaran is known for his pivotal contributions in mathematical physics, including work on the Riemann Hypothesis. He has held roles in R&D at BHEL and academia, and is currently CEO at Altech Power and Energy Systems, focusing on advanced computing in power and energy industries.",
       talk: "Interdisciplinary Problem Solving: From Mathematical Physics to Applied Engineering"
@@ -29,7 +31,7 @@ export default function SpeakersPage() {
       name: "Dr. Rajiv Misra",
       title: "Professor, Department of Computer Science and Engineering",
       organization: "Indian Institute of Technology (IIT) Patna",
-      image: "/rajiv-misra.jpg",
+      image: "/IMG/imgs/Rajiv-Misra.jpg",
       expertise: ["Wireless Networks", "Distributed Algorithms", "Cloud Computing", "Sensor Networks"],
       bio: "Dr. Rajiv Misra has published over 70 papers in top journals and conferences on topics related to wireless networks, distributed systems, and cloud computing. He is a mentor to multiple PhD students and has significant academic contributions, including book chapters and editorial roles in leading publications.",
       talk: "Distributed Intelligence: Advances in Sensor Networks and Cloud Computing"
@@ -38,7 +40,7 @@ export default function SpeakersPage() {
       name: "Dr. Saroj Kumar Biswas",
       title: "Associate Professor, Computer Science and Engineering",
       organization: "National Institute of Technology (NIT) Silchar",
-      image: "/saroj-biswas.jpg",
+      image: "/IMG/imgs/saroj-kumar-biswas.jpg",
       expertise: ["Artificial Intelligence", "Machine Learning", "Image Processing", "Deep Learning", "Data Science"],
       bio: "Dr. Saroj Kumar Biswas has guided more than 19 doctoral students and completed significant sponsored R&D projects. With over 180 publications, his research spans AI, machine learning, and data science, emphasizing practical solutions and explainable AI.",
       talk: "Explainable Artificial Intelligence: Bridging Trust and Technology in Smart Systems"
@@ -47,7 +49,7 @@ export default function SpeakersPage() {
       name: "Dr. Raju Bhukya",
       title: "Associate Professor, Computer Science and Engineering",
       organization: "National Institute of Technology (NIT) Warangal",
-      image: "/raju-bhukya.jpg",
+      image: "/IMG/imgs/Raju-Bhukya.jpg",
       expertise: ["Data Mining", "Machine Learning", "Big Data Analytics"],
       bio: "Dr. Raju Bhukya serves as Associate Professor and In-charge of the Center for Continuing Education at NIT Warangal. His research focuses on the integration of data mining, big data analytics, and machine learning for cutting-edge technology solutions.",
       talk: "Harnessing Big Data Analytics for Societal Transformation"
@@ -65,7 +67,7 @@ export default function SpeakersPage() {
       name: "Dr. Chandra Sekhar Jatoth",
       title: "Assistant Professor, Information Technology",
       organization: "National Institute of Technology (NIT) Raipur",
-      image: "/imgs/Chandra-Sekhar-jatoth.jpg", // Fixed: use a relative path from /public/imgs/
+      image: "/IMG/imgs/Chandra-Sekhar-jatoth.jpg", // Fixed: use a relative path from /public/imgs/
       expertise: ["Artificial Intelligence", "Image Processing"],
       bio: "Dr. Chandra Sekhar Jatoth is noted among the top 2% scientists worldwide, focusing on artificial intelligence and image processing. He has contributed to national projects and advanced technical education through research and committee leadership.",
       talk: "AI for Transformative Societal Impact: Opportunities in Image Processing"
@@ -124,7 +126,7 @@ export default function SpeakersPage() {
                     <div className="md:col-span-1">
                       <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-4">
                         <Image
-                          src={typeof speaker.image === "string" ? speaker.image : "/placeholder.svg"}
+                          src={speaker.image}
                           alt={speaker.name}
                           fill
                           className="object-cover"
