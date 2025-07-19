@@ -7,7 +7,7 @@ export default function Header() {
     <>
       {/* Top Banner */}
       <div className="bg-slate-800 text-white py-2 px-4 text-center text-sm">
-        National Conference on Next-Gen Technologies in AI Applications | September 24-25, 2025 | SNIST Hyderabad, India and Online
+        National Conference on Next-Gen Technologies in AI Applications | September 11-12, 2025 | SNIST Hyderabad, India and Online
       </div>
 
       {/* Main Navigation */}
@@ -41,33 +41,33 @@ export default function Header() {
               
               
 
-             {/* Nav Menu */}
-<nav className="hidden lg:flex items-center space-x-6 ml-6">
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Home</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">About</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Call for Papers</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Tracks</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Speakers</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Dates</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Committee</span>
-  </div>
-  <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
-    <span className="font-medium">Brochure</span>
-  </div>
-</nav>
+              {/* Nav Menu */}
+              <nav className="hidden lg:flex items-center space-x-6">
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Home</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">About</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Call for Papers</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Tracks</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Speakers</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Dates</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Committee</span>
+                </div>
+                <div className="flex items-center space-x-1 text-slate-700 hover:text-blue-600 cursor-pointer">
+                  <span className="font-medium">Brochure</span>
+                </div>
+              </nav>
 
               {/* CTA Button */}
               <div className="ml-0 lg:ml-6">

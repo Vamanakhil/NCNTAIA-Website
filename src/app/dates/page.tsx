@@ -7,43 +7,37 @@ export default function ImportantDatesPage() {
   const importantDates = [
     {
       event: "Abstract Submission Deadline",
-      date: "August 10, 2025",
+      date: "August 8, 2025",
       time: "11:59 PM IST",
       status: "upcoming",
       icon: FileText,
       description: "Submit your 1-page abstract in PDF format with Times New Roman font",
       category: "submission",
     },
-    {
-      event: "Full Paper Submission Deadline",
-      date: "August 25, 2025",
-      time: "11:59 PM IST",
-      status: "upcoming",
-      icon: FileText,
-      description: "Submit complete paper in IEEE format (6 pages max + 2 additional pages with extra fee)",
-      category: "submission",
-    },
+  
     {
       event: "Acceptance Notification",
-      date: "September 5, 2025",
+      date: "August 14, 2025",
       time: "By 6:00 PM IST",
       status: "upcoming",
       icon: Bell,
       description: "Authors will be notified about paper acceptance via email",
       category: "notification",
     },
-    {
-      event: "Early Bird Registration Deadline",
-      date: "September 10, 2025",
+
+      {
+      event: "Full Paper Submission Deadline",
+      date: "August 30, 2025",
       time: "11:59 PM IST",
       status: "upcoming",
-      icon: Users,
-      description: "Register early to avail discounted registration rates",
-      category: "registration",
+      icon: FileText,
+      description: "Submit complete paper in IEEE format (6 pages max + 2 additional pages with extra fee)",
+      category: "submission",
     },
+  
     {
       event: "Final Registration Deadline",
-      date: "September 15, 2025",
+      date: "September 5, 2025",
       time: "11:59 PM IST",
       status: "upcoming",
       icon: Users,
@@ -52,7 +46,7 @@ export default function ImportantDatesPage() {
     },
     {
       event: "Conference Day 1",
-      date: "September 20, 2025",
+      date: "September 11, 2025",
       time: "9:00 AM IST",
       status: "conference",
       icon: Calendar,
@@ -61,7 +55,7 @@ export default function ImportantDatesPage() {
     },
     {
       event: "Conference Day 2",
-      date: "September 21, 2025",
+      date: "September 12, 2025",
       time: "9:00 AM IST",
       status: "conference",
       icon: Calendar,
