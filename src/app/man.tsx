@@ -43,7 +43,7 @@ export default function ConferenceHomepage() {
             <RenderNav isLoaded={isLoaded} />
 
             {/* Hero Section */}
-            <main className="relative h-fit flex flex-col justify-center px-4 mt-13">
+            <main className="relative h-fit flex flex-col justify-center items-center px-4 mt-10">
                 <div className="text-center  mx-auto ">
                     {/* //TODO: nserb and dart science logos */}
                     <div
@@ -56,18 +56,19 @@ export default function ConferenceHomepage() {
                         <Image
                             src="/IMG/nserb.jpg"
                             alt="NCNTAIA"
-                            width={150}
-                            height={150}
+                            width={125}
+                            height={125}
                         />
                         <Image
                             src="/IMG/dart-science.jpg"
                             alt="NCNTAIA"
-                            width={150}
-                            height={150}
+                            width={125}
+                            height={125}
                         />
                     </div>
+                    <div className="text-white mt-5 text-lg font-semibold">ANRF Sponsered</div>
                     <h1
-                        className={`text-4xl md:text-xl lg:text-5xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000 mt-5 ${
+                        className={`text-4xl md:text-xl lg:text-5xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000  ${
                             isLoaded
                                 ? "translate-y-0 opacity-100"
                                 : "translate-y-8 opacity-0"
@@ -117,7 +118,7 @@ export default function ConferenceHomepage() {
 
                     {/* Subtitle */}
                     <p
-                        className={`text-lg md:text-xl text-slate-200 mb-10 drop-shadow-lg transform transition-all duration-1000 ${
+                        className={`text-lg md:text-xl text-slate-200 mb-5 drop-shadow-lg transform transition-all duration-1000 ${
                             isLoaded
                                 ? "translate-y-0 opacity-100"
                                 : "translate-y-8 opacity-0"
@@ -128,7 +129,7 @@ export default function ConferenceHomepage() {
                         Innovation
                     </p>
                 </div>
-                <ScrollDownIndicator isLoaded={isLoaded} />
+                {/* <ScrollDownIndicator isLoaded={isLoaded} /> */}
             </main>
         </div>
     );
