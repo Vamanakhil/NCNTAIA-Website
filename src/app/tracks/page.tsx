@@ -1,7 +1,7 @@
-import ConferenceLayout from "@/components/ui/layout/conf-layout"
-
-import { Card, CardContent } from "@/components/ui/card"
-import { Brain, Database, Cloud, Shield, Handshake, Bot, BarChart3, Globe, Lock } from "lucide-react"
+import ConferenceLayout from "@/components/ui/layout/conf-layout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Brain, Database, Cloud, Shield, Handshake, Bot, BarChart3, Globe, Lock } from "lucide-react";
+import Image from "next/image";
 
 export default function TracksPage() {
   const mainTracks = [
@@ -11,7 +11,7 @@ export default function TracksPage() {
       description: "Artificial Intelligence and Machine Learning innovations",
       color: "from-[#1D4ED8] to-[#1D4ED8]/80",
       bgColor: "from-[#1D4ED8]/10 to-[#1D4ED8]/5",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/placeholder.svg",
     },
     {
       icon: Database,
@@ -19,7 +19,7 @@ export default function TracksPage() {
       description: "Advanced data processing and analytics solutions",
       color: "from-[#F97316] to-[#F97316]/80",
       bgColor: "from-[#F97316]/10 to-[#F97316]/5",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/placeholder.svg",
     },
     {
       icon: Cloud,
@@ -27,7 +27,7 @@ export default function TracksPage() {
       description: "Connected systems and intelligent applications",
       color: "from-purple-600 to-purple-600/80",
       bgColor: "from-purple-600/10 to-purple-600/5",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/placeholder.svg",
     },
     {
       icon: Shield,
@@ -35,7 +35,7 @@ export default function TracksPage() {
       description: "Security frameworks and decentralized technologies",
       color: "from-red-600 to-red-600/80",
       bgColor: "from-red-600/10 to-red-600/5",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/placeholder.svg",
     },
     {
       icon: Handshake,
@@ -43,9 +43,9 @@ export default function TracksPage() {
       description: "Bridging research and practical applications",
       color: "from-green-600 to-green-600/80",
       bgColor: "from-green-600/10 to-green-600/5",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/placeholder.svg",
     },
-  ]
+  ];
 
   const technicalSessions = [
     {
@@ -60,7 +60,7 @@ export default function TracksPage() {
         "AI in Vision, Speech, and Natural Language Processing",
         "AI in Healthcare, Agriculture & Education",
       ],
-      image: "/placeholder.svg?height=150&width=200",
+      image: "/placeholder.svg",
     },
     {
       session: "Technical Session 2",
@@ -73,7 +73,7 @@ export default function TracksPage() {
         "Big Data Applications in Business Intelligence & Decision Making",
         "Real-time Data Streaming and Predictive Analytics",
       ],
-      image: "/placeholder.svg?height=150&width=200",
+      image: "/placeholder.svg",
     },
     {
       session: "Technical Session 3",
@@ -88,7 +88,7 @@ export default function TracksPage() {
         "Cloud, Edge & Quantum Computing",
         "IoT, Smart Devices & Embedded Systems",
       ],
-      image: "/placeholder.svg?height=150&width=200",
+      image: "/placeholder.svg",
     },
     {
       session: "Technical Session 4",
@@ -101,7 +101,7 @@ export default function TracksPage() {
         "Privacy-Preserving Machine Learning",
         "Trustworthy AI and Secure Data Transactions",
       ],
-      image: "/placeholder.svg?height=150&width=200",
+      image: "/placeholder.svg",
     },
     {
       session: "Technical Session 5",
@@ -114,9 +114,9 @@ export default function TracksPage() {
         "Industry-academia collaboration models",
         "Technology transfer and innovation ecosystems",
       ],
-      image: "/placeholder.svg?height=150&width=200",
+      image: "/placeholder.svg",
     },
-  ]
+  ];
 
   return (
     <ConferenceLayout
@@ -133,20 +133,22 @@ export default function TracksPage() {
               data science, and related technologies
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mainTracks.map((track, index) => {
-              const IconComponent = track.icon
+            {mainTracks.map((track) => {
+              const IconComponent = track.icon;
               return (
                 <Card
-                  key={index}
+                  key={track.title}
                   className={`shadow-xl border-0 bg-gradient-to-br ${track.bgColor} rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105`}
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={track.image || "/placeholder.svg"}
+                    <Image
+                      src={track.image}
                       alt={track.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={true}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-4 left-4">
@@ -157,13 +159,12 @@ export default function TracksPage() {
                       </div>
                     </div>
                   </div>
-
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold text-[#1E293B] mb-3 leading-tight">{track.title}</h3>
                     <p className="text-[#475569] leading-relaxed">{track.description}</p>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </section>
@@ -176,23 +177,25 @@ export default function TracksPage() {
               Detailed breakdown of topics and research areas for each technical session
             </p>
           </div>
-
           <div className="space-y-8">
-            {technicalSessions.map((session, index) => {
-              const IconComponent = session.icon
+            {technicalSessions.map((session) => {
+              const IconComponent = session.icon;
               return (
                 <Card
-                  key={index}
+                  key={session.session}
                   className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
                 >
                   <CardContent className="p-0">
                     <div className="grid lg:grid-cols-4 gap-0">
                       <div className="lg:col-span-1 relative">
                         <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden">
-                          <img
-                            src={session.image || "/placeholder.svg"}
+                          <Image
+                            src={session.image}
                             alt={session.title}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 25vw"
+                            priority={true}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/20"></div>
                           <div className="absolute top-4 left-4">
@@ -204,7 +207,6 @@ export default function TracksPage() {
                           </div>
                         </div>
                       </div>
-
                       <div className="lg:col-span-3 p-8 space-y-6">
                         <div>
                           <div className="flex items-center gap-3 mb-4">
@@ -216,7 +218,6 @@ export default function TracksPage() {
                           </div>
                           <h3 className="text-2xl font-bold text-[#1E293B] mb-4">{session.title}</h3>
                         </div>
-
                         <div>
                           <h4 className="text-lg font-semibold text-[#1E293B] mb-4">Key Topics:</h4>
                           <div className="grid md:grid-cols-2 gap-3">
@@ -235,7 +236,7 @@ export default function TracksPage() {
                     </div>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </section>
@@ -251,7 +252,6 @@ export default function TracksPage() {
                     Submit your research contributions to the most appropriate track for maximum impact and visibility
                   </p>
                 </div>
-
                 <div className="grid md:grid-cols-3 gap-8">
                   <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -281,7 +281,6 @@ export default function TracksPage() {
                     </p>
                   </div>
                 </div>
-
                 <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl max-w-4xl mx-auto">
                   <h3 className="text-2xl font-bold mb-4">Cross-Track Submissions Welcome</h3>
                   <p className="text-lg opacity-90 mb-6">
@@ -303,5 +302,5 @@ export default function TracksPage() {
         </section>
       </div>
     </ConferenceLayout>
-  )
+  );
 }

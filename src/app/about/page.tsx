@@ -1,36 +1,35 @@
-  import ConferenceLayout from "@/components/ui/layout/conf-layout"
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Building, Award, Users, Globe, Quote } from "lucide-react"
-import Image from "next/image"
+import ConferenceLayout from "@/components/ui/layout/conf-layout";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Building, Award, Users, Globe, Quote } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const testimonials = [
     {
       quote:
-        "Attending NCNTAIA always rekindles my scientific energy and reminds me why I went into AI research. The quality of presentations and networking opportunities are unmatched.",
+        "&quot;Attending NCNTAIA always rekindles my scientific energy and reminds me why I went into AI research. The quality of presentations and networking opportunities are unmatched.&quot;",
       author: "Dr. Rajesh Kumar",
       designation: "Professor of Computer Science",
       organization: "IIT Delhi",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/placeholder.svg",
     },
     {
       quote:
-        "NCNTAIA is the preeminent conference in this area. Excellent relevant science and friendships bring me back every year. It's where the future of AI is discussed.",
+        "&quot;NCNTAIA is the preeminent conference in this area. Excellent relevant science and friendships bring me back every year. It&apos;s where the future of AI is discussed.&quot;",
       author: "Dr. Priya Sharma",
       designation: "Head of AI Research",
       organization: "Microsoft Research India",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/placeholder.svg",
     },
     {
       quote:
-        "The conference provides an exceptional platform for researchers to showcase their work and collaborate on cutting-edge AI technologies. Truly inspiring!",
+        "&quot;The conference provides an exceptional platform for researchers to showcase their work and collaborate on cutting-edge AI technologies. Truly inspiring!&quot;",
       author: "Prof. Amit Patel",
       designation: "Director, AI Lab",
       organization: "IISC Bangalore",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/placeholder.svg",
     },
-  ]
+  ];
 
   return (
     <ConferenceLayout
@@ -38,6 +37,7 @@ export default function AboutPage() {
       subtitle="Exploring cutting-edge research and innovations in Artificial Intelligence, Big Data Analytics, and Smart Computing for a digital tomorrow"
     >
       <div className="max-w-6xl mx-auto space-y-12">
+
         {/* Conference Overview */}
         <section>
           <Card className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
@@ -52,14 +52,10 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold text-[#1E293B]">NCNTAIA 2025</h3>
                   <p className="text-lg text-[#475569] leading-relaxed">
-                    The National Conference on Next-Gen Technologies in AI Applications is a premier academic event that
-                    brings together researchers, academicians, industry professionals, and students from around the
-                    world to share their latest findings and innovations.
+                    The National Conference on Next-Gen Technologies in AI Applications is a premier academic event that brings together researchers, academicians, industry professionals, and students from around the world to share their latest findings and innovations.
                   </p>
                   <p className="text-[#475569] leading-relaxed">
-                    This conference serves as a global forum to advance academic research and innovation, fostering
-                    collaboration between academia and industry. Participants will have the opportunity to present their
-                    research, learn about cutting-edge developments, and network with peers in the field.
+                    This conference serves as a global forum to advance academic research and innovation, fostering collaboration between academia and industry. Participants will have the opportunity to present their research, learn about cutting-edge developments, and network with peers in the field.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-[#F9FAFB] to-[#1D4ED8]/5 p-6 rounded-xl">
@@ -107,13 +103,11 @@ export default function AboutPage() {
                       <div>
                         <h3 className="text-xl font-bold text-[#1E293B] mb-3">Promote Research and Innovation</h3>
                         <p className="text-[#475569] leading-relaxed">
-                          To provide a dynamic platform for sharing innovative research, emerging trends, and practical
-                          applications in Artificial Intelligence, Big Data Analytics, and Computer Applications.
+                          To provide a dynamic platform for sharing innovative research, emerging trends, and practical applications in Artificial Intelligence, Big Data Analytics, and Computer Applications.
                         </p>
                       </div>
                     </div>
                   </div>
-
                   <div className="p-6 bg-gradient-to-br from-[#F97316]/10 to-[#F97316]/5 rounded-2xl border border-[#F97316]/20">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-[#F97316] rounded-xl flex items-center justify-center flex-shrink-0">
@@ -122,15 +116,12 @@ export default function AboutPage() {
                       <div>
                         <h3 className="text-xl font-bold text-[#1E293B] mb-3">Foster Collaboration</h3>
                         <p className="text-[#475569] leading-relaxed">
-                          To encourage collaboration among researchers, industry experts, and academicians to present
-                          cutting-edge research and discuss emerging trends in AI, Big Data, and Smart Computing
-                          Applications.
+                          To encourage collaboration among researchers, industry experts, and academicians to present cutting-edge research and discuss emerging trends in AI, Big Data, and Smart Computing Applications.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div className="space-y-6">
                   <div className="p-6 bg-gradient-to-br from-green-600/10 to-green-600/5 rounded-2xl border border-green-600/20">
                     <div className="flex items-start gap-4">
@@ -140,13 +131,11 @@ export default function AboutPage() {
                       <div>
                         <h3 className="text-xl font-bold text-[#1E293B] mb-3">Promote Sustainable Solutions</h3>
                         <p className="text-[#475569] leading-relaxed">
-                          To address how AI technologies can be leveraged for sustainable development, solving
-                          challenges such as climate change, public health, and economic inequality.
+                          To address how AI technologies can be leveraged for sustainable development, solving challenges such as climate change, public health, and economic inequality.
                         </p>
                       </div>
                     </div>
                   </div>
-
                   <div className="p-6 bg-gradient-to-br from-purple-600/10 to-purple-600/5 rounded-2xl border border-purple-600/20">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -155,21 +144,17 @@ export default function AboutPage() {
                       <div>
                         <h3 className="text-xl font-bold text-[#1E293B] mb-3">Address National Challenges</h3>
                         <p className="text-[#475569] leading-relaxed">
-                          Bring global perspectives to discuss national challenges and opportunities using AI and big
-                          data for innovation, national policy, and technological equity.
+                          Bring global perspectives to discuss national challenges and opportunities using AI and big data for innovation, national policy, and technological equity.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div className="text-center p-8 bg-gradient-to-r from-[#F9FAFB] to-[#1D4ED8]/5 rounded-2xl">
                 <h3 className="text-2xl font-bold text-[#1E293B] mb-4">Our Vision</h3>
                 <p className="text-lg text-[#475569] max-w-3xl mx-auto leading-relaxed">
-                  To create a transformative platform where cutting-edge research meets practical innovation, fostering
-                  a collaborative ecosystem that drives technological advancement and addresses real-world challenges
-                  through AI and data science.
+                  To create a transformative platform where cutting-edge research meets practical innovation, fostering a collaborative ecosystem that drives technological advancement and addresses real-world challenges through AI and data science.
                 </p>
               </div>
             </CardContent>
@@ -190,14 +175,12 @@ export default function AboutPage() {
                 <div className="md:col-span-2 space-y-6">
                   <div>
                     <h3 className="text-2xl font-bold text-[#1E293B] mb-4">
-                      Sreenidhi Institute of Science & Technology
+                      Sreenidhi Institute of Science &amp; Technology
                     </h3>
                     <p className="text-lg text-[#475569] leading-relaxed mb-4">
-                      An autonomous institution affiliated to JNTUH, accredited by NAAC with A grade and NBA. SNIST has
-                      established itself as a leading center for technical education and research in India.
+                      An autonomous institution affiliated to JNTUH, accredited by NAAC with A grade and NBA. SNIST has established itself as a leading center for technical education and research in India.
                     </p>
                   </div>
-
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold text-[#1E293B] flex items-center gap-2">
@@ -219,7 +202,6 @@ export default function AboutPage() {
                         </div>
                       </div>
                     </div>
-
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold text-[#1E293B] flex items-center gap-2">
                         <Users className="w-5 h-5 text-[#F97316]" />
@@ -242,20 +224,17 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-
                 <div className="space-y-4">
                   <div className="bg-gradient-to-br from-[#1D4ED8]/10 to-[#F97316]/10 p-6 rounded-xl">
                     <h4 className="font-semibold text-[#1E293B] mb-4">Mission</h4>
                     <p className="text-sm text-[#475569] leading-relaxed">
-                      To provide quality technical education and foster innovation through cutting-edge research in
-                      emerging technologies.
+                      To provide quality technical education and foster innovation through cutting-edge research in emerging technologies.
                     </p>
                   </div>
                   <div className="bg-gradient-to-br from-[#F97316]/10 to-[#1D4ED8]/10 p-6 rounded-xl">
                     <h4 className="font-semibold text-[#1E293B] mb-4">Vision</h4>
                     <p className="text-sm text-[#475569] leading-relaxed">
-                      To be a globally recognized institution for excellence in technical education, research, and
-                      innovation.
+                      To be a globally recognized institution for excellence in technical education, research, and innovation.
                     </p>
                   </div>
                 </div>
@@ -272,7 +251,6 @@ export default function AboutPage() {
               Hear from distinguished researchers who have been part of our conference community
             </p>
           </div>
-
           <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card
@@ -283,16 +261,19 @@ export default function AboutPage() {
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <Quote className="w-8 h-8 text-[#1D4ED8] flex-shrink-0 mt-1" />
-                      <p className="text-[#475569] leading-relaxed italic">"{testimonial.quote}"</p>
+                      <p
+                        className="text-[#475569] leading-relaxed italic"
+                        dangerouslySetInnerHTML={{ __html: testimonial.quote }}
+                      />
                     </div>
-
                     <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
                       <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#1D4ED8] to-[#F97316]">
                         <Image
-                          src={testimonial.image || "/placeholder.svg"}
+                          src={testimonial.image}
                           alt={testimonial.author}
                           fill
                           className="object-cover"
+                          sizes="64px"
                         />
                       </div>
                       <div>
@@ -308,7 +289,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Conference Objectives */}
+        {/* Conference Objectives (Summary) */}
         <section>
           <Card className="shadow-lg border-0 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white rounded-2xl overflow-hidden">
             <CardContent className="p-8">
@@ -316,7 +297,6 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-bold mb-4">Conference Objectives</h2>
                 <p className="text-xl opacity-90">Our mission to advance AI research and foster innovation</p>
               </div>
-
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                   <h3 className="text-lg font-semibold mb-3">Research Advancement</h3>
@@ -360,5 +340,5 @@ export default function AboutPage() {
         </section>
       </div>
     </ConferenceLayout>
-  )
+  );
 }
