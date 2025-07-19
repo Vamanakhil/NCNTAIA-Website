@@ -18,7 +18,7 @@ export default function HeroSection() {
 
           {/* Conference Details */}
           <div className="text-xl lg:text-2xl text-slate-600 mb-8 space-y-2">
-            <div className="font-semibold">September 20–21, 2025</div>
+            <div className="font-semibold">September 11–12, 2025</div>
             <div>SNIST Hyderabad, India, and Online</div>
           </div>
 

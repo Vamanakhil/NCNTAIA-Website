@@ -36,35 +36,32 @@ export default function ConferenceLayout({
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col">
             {/* 🔹 Announcement Bar */}
-            <div className=" bg-white shadow-md border-b">
-                {/* Announcement Bar */}
-                <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
-                    National Conference on Next-Gen Technologies in AI
-                    Applications | September 24-25, 2025 | SNIST Hyderabad,
-                    India and Online
-                </div>
 
-                {/* Logo Strip */}
-                <div className="flex justify-center items-center gap-6 py-2 px-4 bg-white">
-                    <Image
-                        src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/logo-snist.jpg"
-                        alt="SNIST"
-                        width={215}
-                        height={215}
-                    />
-                    <Image
-                        src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/nirf-logo-1.png"
-                        alt="NIRF"
-                        width={55}
-                        height={50}
-                    />
-                    <Image
-                        src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/logo-strip.jpg"
-                        alt="Approvals"
-                        width={290}
-                        height={80}
-                    />
-                </div>
+            <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
+                National Conference on Next-Gen Technologies in AI Applications
+                | September 11–12, 2025 | SNIST Hyderabad, India and Online
+            </div>
+
+            {/* Logo Strip */}
+            <div className="flex justify-center items-center gap-6 py-2 px-4 bg-white">
+                <Image
+                    src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/logo-snist.jpg"
+                    alt="SNIST"
+                    width={215}
+                    height={215}
+                />
+                <Image
+                    src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/nirf-logo-1.png"
+                    alt="NIRF"
+                    width={55}
+                    height={50}
+                />
+                <Image
+                    src="https://sreenidhi.edu.in/wp-content/uploads/2020/09/logo-strip.jpg"
+                    alt="Approvals"
+                    width={290}
+                    height={80}
+                />
             </div>
 
             {/* 🔹 Navigation Bar changes */}
