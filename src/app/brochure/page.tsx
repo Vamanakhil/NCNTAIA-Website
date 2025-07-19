@@ -318,7 +318,7 @@ export default function BrochurePage() {
                 <div className="text-center p-6 bg-gradient-to-br from-purple-600/10 to-purple-600/5 rounded-2xl">
                   <Users className="w-8 h-8 text-purple-600 mx-auto mb-3" />
                   <h4 className="font-bold text-[#1E293B] mb-2">Conference Dates</h4>
-                  <p className="text-[#475569] font-semibold">September 20-21, 2025</p>
+                  <p className="text-[#475569] font-semibold">September 11-12, 2025</p>
                 </div>
               </div>
             </CardContent>

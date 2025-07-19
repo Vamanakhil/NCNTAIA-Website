@@ -34,12 +34,12 @@ export default function ConferenceLayout({
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* 🔹 Announcement Bar */}
-      <div className=" bg-white shadow-md border-b">
-        {/* Announcement Bar */}
-        <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
-          National Conference on Next-Gen Technologies in AI Applications |
-          September 24–25, 2025 | SNIST Hyderabad, India and Online
-        </div>
+
+
+      <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
+        National Conference on Next-Gen Technologies in AI Applications | September 11–12, 2025 | SNIST Hyderabad, India and Online
+      </div>
+
 
         {/* Logo Strip */}
         <div className="flex justify-center items-center gap-6 py-2 px-4 bg-white">

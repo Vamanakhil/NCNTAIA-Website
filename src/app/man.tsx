@@ -53,7 +53,7 @@ export default function ConferenceHomepage() {
 <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b">
   {/* Announcement Bar */}
   <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
-    National Conference on Next-Gen Technologies in AI Applications | September 24–25, 2025 | SNIST Hyderabad, India and Online
+    National Conference on Next-Gen Technologies in AI Applications | September 11–12, 2025 | SNIST Hyderabad, India and Online
   </div>
 
   {/* Logo Strip */}
@@ -150,7 +150,7 @@ export default function ConferenceHomepage() {
             }`}
             style={{ transitionDelay: "700ms" }}
           >
-            <p className="text-xl md:text-2xl text-slate-200 mb-3 drop-shadow-lg">September 24–25, 2025</p>
+            <p className="text-xl md:text-2xl text-slate-200 mb-3 drop-shadow-lg">September 11–12, 2025</p>
             <p className="text-lg md:text-xl text-slate-300 drop-shadow-lg">
               <strong>SNIST</strong> Hyderabad, India and Online
             </p>
