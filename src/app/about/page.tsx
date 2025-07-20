@@ -1,7 +1,8 @@
 import ConferenceLayout from "@/components/ui/layout/conf-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Award, Users, Globe, Quote, UserRound } from "lucide-react";
+import { Building, Award, Users, Globe, Quote,  } from "lucide-react";
 import Image from "next/image";
+import type { LucideIcon } from "lucide-react"; 
 
 type Objective = {
     label: string;
@@ -10,11 +11,11 @@ type Objective = {
     logo: keyof typeof iconMap;
 };
 
-const iconMap: Record<string, any> = {
-    Globe,
-    Building,
-    Users,
-    Award,
+const iconMap: Record<string, LucideIcon> = {
+  Globe,
+  Building,
+  Users,
+  Award,
 };
 
 const colorMap: Record<Objective["bgColor"], string> = {
