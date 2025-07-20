@@ -222,20 +222,3 @@ function RenderBanner() {
     );
 }
 
-function ScrollDownIndicator({ isLoaded }: { isLoaded: boolean }) {
-    return (
-        <div
-            className={`transition-all duration-1000 ${
-                isLoaded
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
-            }`}
-            style={{ transitionDelay: "1500ms" }}
-        >
-            <div className="flex flex-col items-center text-slate-300">
-                <span className="text-sm mb-2">Scroll Down</span>
-                <ChevronDown className="w-6 h-6 animate-bounce" />
-            </div>
-        </div>
-    );
-}
