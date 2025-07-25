@@ -53,17 +53,12 @@ export default function ConferenceHomepage() {
                                 : "translate-y-8 opacity-0"
                         }`}
                     >
-                        <Image
-                            src="/IMG/nserb.jpg"
-                            alt="NCNTAIA"
-                            width={125}
-                            height={125}
-                        />
+                        
                         <Image
                             src="/IMG/dart-science.jpg"
                             alt="NCNTAIA"
-                            width={125}
-                            height={125}
+                            width={200}
+                            height={150}
                         />
                     </div>
                     <div className="text-white mt-5 text-lg font-semibold">ANRF Sponsered</div>
@@ -95,7 +90,7 @@ export default function ConferenceHomepage() {
                         style={{ transitionDelay: "700ms" }}
                     >
                         <p className="text-xl md:text-2xl text-slate-200 mb-3 drop-shadow-lg">
-                            September 24–25, 2025
+                            September 11–12, 2025
                         </p>
                         <p className="text-lg md:text-xl text-slate-300 drop-shadow-lg">
                             <strong>SNIST</strong> Hyderabad, India and Online
@@ -194,7 +189,7 @@ function RenderBanner() {
             {/* Announcement Bar */}
             <div className="bg-slate-900 text-white text-sm text-center py-2 px-4">
                 National Conference on Next-Gen Technologies in AI Applications
-                | September 24–25, 2025 | SNIST Hyderabad, India and Online
+                | September 11–12, 2025 | SNIST Hyderabad, India and Online
             </div>
 
             {/* Logo Strip */}

@@ -1,7 +1,9 @@
+"use client"
+
 import ConferenceLayout from "@/components/ui/layout/conf-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Upload, CheckCircle, AlertCircle, Mail } from "lucide-react"
+import { FileText, Upload, CheckCircle, AlertCircle, Mail, Hourglass, DollarSign } from "lucide-react" // Added Hourglass and DollarSign
 
 export default function CallForPapersPage() {
   return (
@@ -9,7 +11,7 @@ export default function CallForPapersPage() {
       title="Call for Papers"
       subtitle="Submit your research contributions to NCNTAIA 2025 and be part of advancing AI technologies"
     >
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-12 py-12">
         {/* Submission Guidelines */}
         <section>
           <Card className="shadow-lg">
@@ -51,7 +53,6 @@ export default function CallForPapersPage() {
                     </div>
                   </div>
                 </div>
-
                 {/* Full Paper Submission */}
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-slate-800 flex items-center gap-2">
@@ -86,7 +87,6 @@ export default function CallForPapersPage() {
             </CardContent>
           </Card>
         </section>
-
         {/* Plagiarism Policy */}
         <section>
           <Card className="shadow-lg border-l-4 border-l-red-500">
@@ -131,7 +131,6 @@ export default function CallForPapersPage() {
             </CardContent>
           </Card>
         </section>
-
         {/* Publication Information */}
         <section>
           <Card className="shadow-lg">
@@ -187,7 +186,6 @@ export default function CallForPapersPage() {
             </CardContent>
           </Card>
         </section>
-
         {/* Submission Process */}
         <section>
           <Card className="shadow-lg">
@@ -207,16 +205,151 @@ export default function CallForPapersPage() {
                 <p className="text-slate-600 text-sm mb-4">
                   Send your abstracts and full papers to the above email address with appropriate subject lines.
                 </p>
-            
-
-
-
               </div>
-
               <div className="text-center">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
                   Submit Your Paper
                 </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Post-Submission Process */}
+        <section>
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-2xl text-slate-800 flex items-center gap-3">
+                <Hourglass className="w-6 h-6 text-orange-500" />
+                Post-Submission Process
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <p className="text-slate-700 text-base leading-relaxed">
+                  After sending your abstract, our internal peer review team will verify the submission. You will be
+                  notified about the status of your abstract via email within 2-3 working days. Upon acceptance, you
+                  will receive further instructions on full paper submission and conference registration.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Registration Details */}
+        <section>
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-2xl text-slate-800 flex items-center gap-3">
+                <DollarSign className="w-6 h-6 text-green-600" />
+                Conference Registration Details
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Research Scholars / Students */}
+                <div className="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col h-full">
+                  <h4 className="font-bold text-blue-700 text-xl mb-2">Research Scholars / Students</h4>
+                  <p className="text-3xl font-extrabold text-blue-600 mb-4">₹500</p>
+                  <ul className="space-y-2 text-sm text-slate-700 flex-grow">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Access to all sessions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Conference kit
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Lunch & refreshments
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Certificate of participation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Faculty & Scientist */}
+                <div className="bg-green-50 p-6 rounded-lg shadow-md flex flex-col h-full">
+                  <h4 className="font-bold text-green-700 text-xl mb-2">Faculty & Scientist</h4>
+                  <p className="text-3xl font-extrabold text-green-600 mb-4">₹1000</p>
+                  <ul className="space-y-2 text-sm text-slate-700 flex-grow">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Access to all sessions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-1" />
+                      Conference kit
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Lunch & refreshments
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Certificate of participation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Industry Persons */}
+                <div className="bg-orange-50 p-6 rounded-lg shadow-md flex flex-col h-full">
+                  <h4 className="font-bold text-orange-700 text-xl mb-2">Industry Persons</h4>
+                  <p className="text-3xl font-extrabold text-orange-600 mb-4">₹2500</p>
+                  <ul className="space-y-2 text-sm text-slate-700 flex-grow">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Access to all sessions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Conference kit
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Lunch & refreshments
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Certificate of participation
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Networking opportunities
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Foreign Participants */}
+                <div className="bg-purple-50 p-6 rounded-lg shadow-md flex flex-col h-full">
+                  <h4 className="font-bold text-purple-700 text-xl mb-2">Foreign Participants</h4>
+                  <p className="text-3xl font-extrabold text-purple-600 mb-4">$100</p>
+                  <ul className="space-y-2 text-sm text-slate-700 flex-grow">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Access to all sessions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Conference kit
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Lunch & refreshments
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Certificate of participation
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                      Networking opportunities
+                    </li>
+                  </ul>
+                </div>
               </div>
             </CardContent>
           </Card>

@@ -136,13 +136,13 @@ const textColorMap: Record<Objective["bgColor"], string> = {
 function ConferenceOverviewStats() {
     const stats: Stat[] = [
         {
-            label: "500+",
+            label: "100+",
             description: "Expected Participants",
             color: "blue",
         },
         {
-            label: "8",
-            description: "Technical Tracks",
+            label: "5",
+            description: "Technical Sessions",
             color: "green",
         },
         {
@@ -151,7 +151,7 @@ function ConferenceOverviewStats() {
             color: "orange",
         },
         {
-            label: "50+",
+            label: "5+",
             description: "Expert Speakers",
             color: "purple",
         },
@@ -367,23 +367,23 @@ function Testimonials() {
   const testimonials = [
     {
         quote: "&quot;Attending NCNTAIA always rekindles my scientific energy and reminds me why I went into AI research. The quality of presentations and networking opportunities are unmatched.&quot;",
-        author: "Dr. Rajesh Kumar",
+        author: "Dr. Mamatha T",
         designation: "Professor of Computer Science",
-        organization: "IIT Delhi",
+        organization: "SNIST",
         image: "/user-placeholder.svg",
     },
     {
         quote: "&quot;NCNTAIA is the preeminent conference in this area. Excellent relevant science and friendships bring me back every year. It&apos;s where the future of AI is discussed.&quot;",
-        author: "Dr. Priya Sharma",
-        designation: "Head of AI Research",
-        organization: "Microsoft Research India",
+        author: "Dr. Aruna Varanasi",
+        designation: "Dean Tranings & Computers",
+        organization: "SNIST",
         image: "/user-placeholder.svg",
     },
     {
         quote: "&quot;The conference provides an exceptional platform for researchers to showcase their work and collaborate on cutting-edge AI technologies. Truly inspiring!&quot;",
-        author: "Prof. Amit Patel",
-        designation: "Director, AI Lab",
-        organization: "IISC Bangalore",
+        author: "Dr. K Shirisha",
+        designation: "Head of Department CSE",
+        organization: "SNIST",
         image: "/user-placeholder.svg",
     },
 ];

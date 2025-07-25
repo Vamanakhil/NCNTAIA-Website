@@ -418,15 +418,16 @@ export default function BrochurePage() {
                   <p className="opacity-80">In collaboration with ANRF</p>
                 </div>
 
-                <div className="text-center">
-                  <p className="text-2xl font-bold mb-2">
-                    Join us in shaping the future of research and innovation in India!
-                  </p>
-                  <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <Download className="w-6 h-6 mr-3" />
-                    Download Full Brochure PDF
-                  </Button>
-                </div>
+                <div className="flex justify-center items-center py-10">
+      <a
+        href="/brochure.pdf"
+        download
+        className="inline-flex items-center justify-center bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+      >
+        <Download className="w-6 h-6 mr-3" />
+        Download Full Brochure PDF
+      </a>
+    </div>
               </div>
             </CardContent>
           </Card>

@@ -172,34 +172,46 @@ export default function ImportantDatesPage() {
               <CardContent className="p-6 text-center">
                 <FileText className="w-12 h-12 mx-auto mb-4 opacity-90" />
                 <h3 className="text-lg font-bold mb-2">Abstract Deadline</h3>
-                <p className="text-2xl font-bold mb-1">Aug 10</p>
+                <p className="text-2xl font-bold mb-1">Aug 08</p>
                 <p className="text-sm opacity-90">2025</p>
               </CardContent>
             </Card>
+            
+            <Card className="shadow-lg border-0 bg-gradient-to-br from-purple-600 to-purple-600/80 text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardContent className="p-6 text-center">
+                <Bell className="w-12 h-12 mx-auto mb-4 opacity-90" />
+                <h3 className="text-lg font-bold mb-2">Notification of Acceptance</h3>
+                <p className="text-2xl font-bold mb-1">Aug 14</p>
+                <p className="text-sm opacity-90">2025</p>
+              </CardContent>
+            </Card>            
 
             <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F97316] to-[#F97316]/80 text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <FileText className="w-12 h-12 mx-auto mb-4 opacity-90" />
                 <h3 className="text-lg font-bold mb-2">Full Paper Deadline</h3>
-                <p className="text-2xl font-bold mb-1">Aug 25</p>
+                <p className="text-2xl font-bold mb-1">Aug 30</p>
                 <p className="text-sm opacity-90">2025</p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg border-0 bg-gradient-to-br from-purple-600 to-purple-600/80 text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+            
+
+            <Card className="shadow-lg border-0 bg-gradient-to-br from-green-600 to-green-600/80 text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
-                <Bell className="w-12 h-12 mx-auto mb-4 opacity-90" />
-                <h3 className="text-lg font-bold mb-2">Notification</h3>
-                <p className="text-2xl font-bold mb-1">Sep 5</p>
+                <Calendar className="w-12 h-12 mx-auto mb-4 opacity-90" />
+                <h3 className="text-lg font-bold mb-2">Registration Deadline</h3>
+                <p className="text-2xl font-bold mb-1">Sep 05</p>
                 <p className="text-sm opacity-90">2025</p>
               </CardContent>
             </Card>
+
 
             <Card className="shadow-lg border-0 bg-gradient-to-br from-green-600 to-green-600/80 text-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <Calendar className="w-12 h-12 mx-auto mb-4 opacity-90" />
                 <h3 className="text-lg font-bold mb-2">Conference</h3>
-                <p className="text-2xl font-bold mb-1">Sep 20-21</p>
+                <p className="text-2xl font-bold mb-1">Sep 11-12</p>
                 <p className="text-sm opacity-90">2025</p>
               </CardContent>
             </Card>
