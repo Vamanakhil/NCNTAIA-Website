@@ -1,3 +1,4 @@
+import Link from "next/link"
 import ConferenceLayout from "@/components/ui/layout/conf-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -97,10 +98,12 @@ export default function BrochurePage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <Download className="w-6 h-6 mr-3" />
-                    Download Full Brochure PDF
-                  </Button>
+                  <a href="/brochure.pdf" download="NCNTAIA-2025-Brochure.pdf">
+                    <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <Download className="w-6 h-6 mr-3" />
+                      Download Full Brochure PDF
+                    </Button>
+                  </a>
                   <Button
                     variant="outline"
                     className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-2xl bg-transparent"
@@ -140,7 +143,7 @@ export default function BrochurePage() {
                 <div className="bg-gradient-to-br from-[#1D4ED8]/10 to-[#F97316]/10 p-8 rounded-2xl">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">500+</div>
+                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">100+</div>
                       <div className="text-sm text-[#475569]">Expected Participants</div>
                     </div>
                     <div className="text-center">
@@ -148,12 +151,12 @@ export default function BrochurePage() {
                       <div className="text-sm text-[#475569]">Research Papers</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">15+</div>
+                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">5+</div>
                       <div className="text-sm text-[#475569]">Keynote Speakers</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#F97316] mb-2">8</div>
-                      <div className="text-sm text-[#475569]">Technical Tracks</div>
+                      <div className="text-3xl font-bold text-[#F97316] mb-2">5</div>
+                      <div className="text-sm text-[#475569]">Technical Sessions</div>
                     </div>
                   </div>
                 </div>
@@ -237,58 +240,6 @@ export default function BrochurePage() {
           </Card>
         </section>
 
-        {/* ANRF Initiatives */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#1E293B] mb-4">ANRF Initiatives Featured</h2>
-            <p className="text-xl text-[#475569]">Funding opportunities and support programs</p>
-          </div>
-
-          <div className="space-y-8">
-            {anrfInitiatives.map((initiative, index) => {
-              const IconComponent = initiative.icon
-              return (
-                <Card key={index} className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className={`bg-gradient-to-r ${initiative.color} p-6 rounded-2xl mb-6`}>
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="w-6 h-6 text-[#1D4ED8]" />
-                        </div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-[#1E293B] mb-2">{initiative.title}</h3>
-                          <Badge className="bg-[#1D4ED8] text-white">{initiative.target}</Badge>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-semibold text-[#1E293B] mb-2">Financial Support</h4>
-                          <p className="text-[#475569]">{initiative.support}</p>
-                        </div>
-                      </div>
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-semibold text-[#1E293B] mb-2">Focus Areas</h4>
-                          <p className="text-[#475569]">{initiative.focus}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-
-          <div className="text-center mt-8">
-            <Badge className="bg-[#1D4ED8]/10 text-[#1D4ED8] border border-[#1D4ED8]/20 px-4 py-2 text-sm">
-              Learn more in our downloadable brochures
-            </Badge>
-          </div>
-        </section>
-
         {/* Important Dates */}
         <section>
           <Card className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
@@ -324,65 +275,76 @@ export default function BrochurePage() {
             </CardContent>
           </Card>
         </section>
+{/* How to Participate */}
+<section>
+  <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F9FAFB] to-[#1D4ED8]/5 rounded-2xl overflow-hidden">
+    <CardContent className="p-8">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-[#1E293B] mb-4">How to Participate</h2>
+        <p className="text-lg text-[#475569]">Simple steps to join the conference</p>
+      </div>
 
-        {/* How to Participate */}
-        <section>
-          <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F9FAFB] to-[#1D4ED8]/5 rounded-2xl overflow-hidden">
-            <CardContent className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-[#1E293B] mb-4">How to Participate</h2>
-                <p className="text-lg text-[#475569]">Simple steps to join the conference</p>
-              </div>
+      {/* Sequential Stepper Layout */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+        {/* --- Step 1 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            1
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Visit Call for Papers</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Access guidelines and submission information.</p>
+          <Link href="/callforpapers">
+            <Button
+              variant="outline"
+              className="border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8]/10 bg-transparent w-40"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Visit site
+            </Button>
+          </Link>
+        </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm">
-                  <div className="w-12 h-12 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    1
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Visit ANRF Portal</h3>
-                  <p className="text-[#475569] mb-4">Access guidelines and funding support information</p>
-                  <Button
-                    variant="outline"
-                    className="border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8]/10 bg-transparent"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Visit Portal
-                  </Button>
-                </div>
+        {/* --- Separator --- */}
+        <div className="flex-1 border-t-2 border-dashed border-gray-300 w-16 rotate-90 md:rotate-0"></div>
 
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm">
-                  <div className="w-12 h-12 bg-[#F97316] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    2
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Submit Abstracts</h3>
-                  <p className="text-[#475569] mb-4">Submit your abstracts and proposals via our portal</p>
-                  <Button
-                    variant="outline"
-                    className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10 bg-transparent"
-                  >
-                    <FileText className="w-4 h-4 mr-2" />
-                    Submit Now
-                  </Button>
-                </div>
+        {/* --- Step 2 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-[#F97316] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            2
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Submit Abstracts</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Submit your abstracts via our online portal.</p>
+          <Button
+            variant="outline"
+            className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10 bg-transparent w-40"
+          >
+            <FileText className="w-4 h-4 mr-2" />
+            Submit Now
+          </Button>
+        </div>
 
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    3
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Join the Conference</h3>
-                  <p className="text-[#475569] mb-4">Participate in sessions and networking events</p>
-                  <Button
-                    variant="outline"
-                    className="border-green-600 text-green-600 hover:bg-green-600/10 bg-transparent"
-                  >
-                    <Users className="w-4 h-4 mr-2" />
-                    Register
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+        {/* --- Separator --- */}
+        <div className="flex-1 border-t-2 border-dashed border-gray-300 w-16 rotate-90 md:rotate-0"></div>
+
+        {/* --- Step 3 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            3
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Register for the Conference</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Participate in sessions and networking events.</p>
+          <Button
+            variant="outline"
+            className="border-green-600 text-green-600 hover:bg-green-600/10 bg-transparent w-40"
+          >
+            <Users className="w-4 h-4 mr-2" />
+            Register
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</section>
 
         {/* Contact Information */}
         <section>
@@ -418,16 +380,17 @@ export default function BrochurePage() {
                   <p className="opacity-80">In collaboration with ANRF</p>
                 </div>
 
-                <div className="flex justify-center items-center py-10">
-      <a
-        href="/brochure.pdf"
-        download
-        className="inline-flex items-center justify-center bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
-        <Download className="w-6 h-6 mr-3" />
-        Download Full Brochure PDF
-      </a>
-    </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2">
+                    Join us in shaping the future of research and innovation in India!
+                  </p>
+                  <a href="/brochure.pdf" download="NCNTAIA-2025-Brochure.pdf">
+                    <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      <Download className="w-6 h-6 mr-3" />
+                      Download Full Brochure PDF
+                    </Button>
+                  </a>
+                </div>
               </div>
             </CardContent>
           </Card>
