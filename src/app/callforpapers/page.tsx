@@ -46,7 +46,7 @@ export default function CallForPapersPage() {
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-slate-800">Submission Deadline</p>
-                        <p className="text-sm text-slate-600 font-semibold">August 10, 2025</p>
+                        <p className="text-sm text-slate-600 font-semibold">August 08, 2025</p>
                       </div>
                     </div>
                   </div>
@@ -77,7 +77,7 @@ export default function CallForPapersPage() {
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-slate-800">Submission Deadline</p>
-                        <p className="text-sm text-slate-600 font-semibold">August 25, 2025</p>
+                        <p className="text-sm text-slate-600 font-semibold">August 30, 2025</p>
                       </div>
                     </div>
                   </div>
