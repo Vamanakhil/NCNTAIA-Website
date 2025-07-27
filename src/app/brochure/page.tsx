@@ -1,15 +1,16 @@
 import Link from "next/link"
 import ConferenceLayout from "@/components/ui/layout/conf-layout"
-import { Card, CardContent, } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
   Download,
   FileText,
   Eye,
- 
+  Calendar,
   Users,
   Award,
+  Star,
   
   Target,
 
@@ -54,16 +55,16 @@ export default function BrochurePage() {
     },
   ]
 
+  
   return (
     <ConferenceLayout
       title="Conference Brochure"
       subtitle="Complete information about NCNTAIA 2025 - Your gateway to cutting-edge AI research and innovation"
     >
       <div className="max-w-7xl mx-auto space-y-16">
-
         {/* Hero Section */}
         <section>
-          <Card className="shadow-xl border-0 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white rounded-3xl">
+          <Card className="shadow-xl border-0 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white rounded-3xl overflow-hidden">
             <CardContent className="p-12">
               <div className="text-center space-y-8">
                 <div>
@@ -72,33 +73,81 @@ export default function BrochurePage() {
                     National Conference on Next-Gen Technologies in AI Applications
                   </p>
                   <p className="text-xl opacity-80 max-w-4xl mx-auto leading-relaxed">
-                    We are delighted to invite researchers, academicians, professionals, and students to participate in our upcoming conference, organized in association with the Anusandhan National Research Foundation (ANRF).
+                    We are delighted to invite researchers, academicians, professionals, and students to participate in
+                    our upcoming conference, organized in association with the Anusandhan National Research Foundation
+                    (ANRF).
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <a href="/brochure.pdf" download>
+                  <a href="/brochure.pdf" download="NCNTAIA-2025-Brochure.pdf">
                     <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                       <Download className="w-6 h-6 mr-3" />
                       Download Full Brochure PDF
                     </Button>
                   </a>
-                  <Link href="/brochure-preview">
-                    <Button
-                      variant="outline"
-                      className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-2xl bg-transparent"
-                    >
-                      <Eye className="w-6 h-6 mr-3" />
-                      Preview Online
-                    </Button>
-                  </Link>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-2xl bg-transparent"
+                  >
+                    <Eye className="w-6 h-6 mr-3" />
+                    Preview Online
+                  </Button>
                 </div>
               </div>
             </CardContent>
           </Card>
         </section>
 
-        {/* Key Themes Section */}
+        {/* About Conference */}
+        <section>
+          <Card className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-[#F9FAFB] to-[#1D4ED8]/5 p-8">
+              <CardTitle className="text-3xl font-bold text-[#1E293B] flex items-center gap-3">
+                <Star className="w-8 h-8 text-[#F97316]" />
+                About the Conference
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <p className="text-lg text-[#475569] leading-relaxed">
+                    The conference aims to promote interdisciplinary dialogue and knowledge exchange among experts from
+                    academia, industry, and research organizations. It aligns with the mission of the ANRF to advance
+                    research and innovation culture across India.
+                  </p>
+                  <p className="text-lg text-[#475569] leading-relaxed">
+                    This event promises to be a vibrant platform for presenting cutting-edge research, fostering
+                    collaborations, and catalyzing innovations for national development, empowering participants to take
+                    active roles in building a Viksit Bharat.
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-[#1D4ED8]/10 to-[#F97316]/10 p-8 rounded-2xl">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">100+</div>
+                      <div className="text-sm text-[#475569]">Expected Participants</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-[#F97316] mb-2">50+</div>
+                      <div className="text-sm text-[#475569]">Research Papers</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-[#1D4ED8] mb-2">5+</div>
+                      <div className="text-sm text-[#475569]">Keynote Speakers</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-[#F97316] mb-2">5</div>
+                      <div className="text-sm text-[#475569]">Technical Sessions</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Key Themes */}
         <section>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#1E293B] mb-4">Key Themes</h2>
@@ -106,10 +155,10 @@ export default function BrochurePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {keyThemes.map((theme) => (
+            {keyThemes.map((theme, index) => (
               <Card
-                key={theme}
-                className="shadow-lg border-0 bg-white rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105"
+                key={index}
+                className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#1D4ED8] to-[#F97316] rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -128,7 +177,7 @@ export default function BrochurePage() {
           </div>
         </section>
 
-        {/* Special Highlights Section */}
+        {/* Special Highlights */}
         <section>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#1E293B] mb-4">Special Highlights</h2>
@@ -136,27 +185,32 @@ export default function BrochurePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {highlights.map(({ icon: Icon, title, description, color }) => (
-              <Card
-                key={title}
-                className="shadow-lg border-0 bg-white rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${color} rounded-2xl flex items-center justify-center`}>
-                      <Icon className="w-8 h-8 text-white" />
+            {highlights.map((highlight, index) => {
+              const IconComponent = highlight.icon
+              return (
+                <Card
+                  key={index}
+                  className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-6">
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${highlight.color} rounded-2xl flex items-center justify-center flex-shrink-0`}
+                      >
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-[#1E293B] mb-3">{highlight.title}</h3>
+                        <p className="text-[#475569] leading-relaxed">{highlight.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-[#1E293B] mb-3">{title}</h3>
-                      <p className="text-[#475569] leading-relaxed">{description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
 
-          <Card className="shadow-lg border-0 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl mt-8">
+          <Card className="shadow-lg border-0 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl overflow-hidden mt-8">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold text-[#1E293B] mb-4">
                 Plus: Networking and Collaboration Opportunities
@@ -168,85 +222,139 @@ export default function BrochurePage() {
           </Card>
         </section>
 
-        {/* How to Participate Section */}
+        {/* Important Dates */}
         <section>
-          <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F9FAFB] to-[#1D4ED8]/5 rounded-2xl">
+          <Card className="shadow-lg border-0 bg-white rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white p-8">
+              <CardTitle className="text-3xl font-bold flex items-center gap-3">
+                <Calendar className="w-8 h-8" />
+                Important Dates
+              </CardTitle>
+            </CardHeader>
             <CardContent className="p-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-[#1E293B] mb-4">How to Participate</h2>
-                <p className="text-lg text-[#475569]">Simple steps to join the conference</p>
-              </div>
-
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
-                {/* Step 1 */}
-                <div className="flex-1 text-center px-4">
-                  <div className="w-12 h-12 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Visit Call for Papers</h3>
-                  <p className="text-sm text-[#475569] mb-4 h-10">Access guidelines and submission information.</p>
-                  <Link href="/callforpapers">
-                    <Button variant="outline" className="border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8]/10 w-40">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Visit Site
-                    </Button>
-                  </Link>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br from-[#1D4ED8]/10 to-[#1D4ED8]/5 rounded-2xl">
+                  <Calendar className="w-8 h-8 text-[#1D4ED8] mx-auto mb-3" />
+                  <h4 className="font-bold text-[#1E293B] mb-2">Abstract Submission</h4>
+                  <p className="text-[#475569] font-semibold">August 10, 2025</p>
                 </div>
-
-                {/* Separator */}
-                <div className="hidden md:block w-16 border-t-2 border-dashed border-gray-300"></div>
-
-                {/* Step 2 */}
-                <div className="flex-1 text-center px-4">
-                  <div className="w-12 h-12 bg-[#F97316] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Submit Abstracts</h3>
-                  <p className="text-sm text-[#475569] mb-4 h-10">Submit your abstracts via our online portal.</p>
-                  <a href="/submit" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10 w-40">
-                      <FileText className="w-4 h-4 mr-2" />
-                      Submit Now
-                    </Button>
-                  </a>
+                 <div className="text-center p-6 bg-gradient-to-br from-green-600/10 to-green-600/5 rounded-2xl">
+                  <Award className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <h4 className="font-bold text-[#1E293B] mb-2">Acceptance Notification</h4>
+                  <p className="text-[#475569] font-semibold">August 14, 2025</p>
                 </div>
-
-                {/* Separator */}
-                <div className="hidden md:block w-16 border-t-2 border-dashed border-gray-300"></div>
-
-                {/* Step 3 */}
-                <div className="flex-1 text-center px-4">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                  <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Register for the Conference</h3>
-                  <p className="text-sm text-[#475569] mb-4 h-10">Participate in sessions and networking events.</p>
-                  <a href="/register" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600/10 w-40">
-                      <Users className="w-4 h-4 mr-2" />
-                      Register
-                    </Button>
-                  </a>
+                <div className="text-center p-6 bg-gradient-to-br from-[#F97316]/10 to-[#F97316]/5 rounded-2xl">
+                  <FileText className="w-8 h-8 text-[#F97316] mx-auto mb-3" />
+                  <h4 className="font-bold text-[#1E293B] mb-2">Full Paper Deadline</h4>
+                  <p className="text-[#475569] font-semibold">August 30, 2025</p>
+                </div>
+               
+                <div className="text-center p-6 bg-gradient-to-br from-purple-600/10 to-purple-600/5 rounded-2xl">
+                  <Users className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <h4 className="font-bold text-[#1E293B] mb-2">Conference Dates</h4>
+                  <p className="text-[#475569] font-semibold">September 11-12, 2025</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </section>
+{/* How to Participate */}
+<section>
+  <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F9FAFB] to-[#1D4ED8]/5 rounded-2xl overflow-hidden">
+    <CardContent className="p-8">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-[#1E293B] mb-4">How to Participate</h2>
+        <p className="text-lg text-[#475569]">Simple steps to join the conference</p>
+      </div>
 
-        {/* Contact Section */}
+      {/* Sequential Stepper Layout */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+        {/* --- Step 1 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-[#1D4ED8] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            1
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Visit Call for Papers</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Access guidelines and submission information.</p>
+          <Link href="/callforpapers">
+            <Button
+              variant="outline"
+              className="border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8]/10 bg-transparent w-40"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Visit site
+            </Button>
+          </Link>
+        </div>
+
+        {/* --- Separator --- */}
+        <div className="flex-1 border-t-2 border-dashed border-gray-300 w-16 rotate-90 md:rotate-0"></div>
+
+        {/* --- Step 2 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-[#F97316] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            2
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Submit Abstracts</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Submit your abstracts via our online portal.</p>
+          <Button
+            variant="outline"
+            className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10 bg-transparent w-40"
+          >
+            <FileText className="w-4 h-4 mr-2" />
+            Submit Now
+          </Button>
+        </div>
+
+        {/* --- Separator --- */}
+        <div className="flex-1 border-t-2 border-dashed border-gray-300 w-16 rotate-90 md:rotate-0"></div>
+
+        {/* --- Step 3 --- */}
+        <div className="flex-1 text-center flex flex-col items-center px-4">
+          <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            3
+          </div>
+          <h3 className="text-lg font-semibold text-[#1E293B] mb-3">Register for the Conference</h3>
+          <p className="text-sm text-[#475569] mb-4 h-10">Participate in sessions and networking events.</p>
+          <Button
+            variant="outline"
+            className="border-green-600 text-green-600 hover:bg-green-600/10 bg-transparent w-40"
+          >
+            <Users className="w-4 h-4 mr-2" />
+            Register
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</section>
+
+        {/* Contact Information */}
         <section>
-          <Card className="shadow-xl border-0 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white rounded-3xl">
+          <Card className="shadow-xl border-0 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] text-white rounded-3xl overflow-hidden">
             <CardContent className="p-12">
               <div className="text-center space-y-8">
-                <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
-                <p className="text-xl opacity-90">Get in touch for any queries or support</p>
+                <div>
+                  <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
+                  <p className="text-xl opacity-90">Get in touch for any queries or support</p>
+                </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                  {[
-                    { icon: Mail, title: "Conference Details", value: "ncntaia-2025@sreenidhi.edu.in" },
-                    { icon: FileText, title: "Submission Queries", value: "submissions@sreenidhi.edu.in" },
-                    { icon: Phone, title: "Phone Support", value: "+91-40-2378-1234" },
-                  ].map(({ icon: Icon, title, value }) => (
-                    <div key={title} className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
-                      <Icon className="w-8 h-8 mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                      <p className="opacity-90">{value}</p>
-                    </div>
-                  ))}
+                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+                    <Mail className="w-8 h-8 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">Conference Details</h3>
+                    <p className="opacity-90">ncntaia-2025@sreenidhi.edu.in</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+                    <FileText className="w-8 h-8 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">Submission Queries</h3>
+                    <p className="opacity-90">ncntaia-2025@sreenidhi.edu.in</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+                    <Phone className="w-8 h-8 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
+                    <p className="opacity-90">+91 9912667488</p>
+                  </div>
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl max-w-2xl mx-auto">
@@ -256,8 +364,10 @@ export default function BrochurePage() {
                 </div>
 
                 <div className="text-center">
-                  <p className="text-2xl font-bold mb-2">Join us in shaping the future of research and innovation in India!</p>
-                  <a href="/brochure.pdf" download>
+                  <p className="text-2xl font-bold mb-2">
+                    Join us in shaping the future of research and innovation in India!
+                  </p>
+                  <a href="/brochure.pdf" download="NCNTAIA-2025-Brochure.pdf">
                     <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                       <Download className="w-6 h-6 mr-3" />
                       Download Full Brochure PDF

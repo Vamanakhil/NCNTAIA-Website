@@ -144,7 +144,8 @@ export default function CommitteePage() {
     organization: "SNIST, Hyderabad",
     department: "CSE Department",
     level: "co-convener",
-    imageUrl: "/IMG/imgs/WhatsApp Image 2025-07-23 at 22.56.01.jpeg?height=80&width=80&text=Dr.+Balaji", // Adjusted to w-20 h-20
+    imageUrl: "/IMG/imgs/WhatsApp Image 2025-07-23 at 22.56.01.jpeg?height=80&width=80&text=Dr.+Balaji",
+    phone: "+91 96664 44100", // Correcting the phone number format
   }
   const localAdvisoryMembers = [
     { name: "Dr. Ali Hussain", title: "Dean (R&D)", organization: "SNIST, Hyderabad" },
@@ -288,13 +289,8 @@ export default function CommitteePage() {
     },
   ]
   const studentCommittee = [
-    {
-      name: "P. Dedeepya",
-      department: "CSE-III",
-      role: "Student Co-ordinator",
-      imageUrl: "/placeholder.svg?height=60&width=60&text=Dedeepya",
-      phone: "+91 898989",
-    },
+    
+
     {
       name: "Vaman Akhil",
       department: "CSE-III",
@@ -337,7 +333,12 @@ export default function CommitteePage() {
   // Find specific members for contact info
   const mamatha = conveners.find((c) => c.name === "Dr. Mamatha Talakoti")
   const vamanAkhil = studentCommittee.find((s) => s.name === "Vaman Akhil")
-  const dedeepya = studentCommittee.find((s) => s.name === "P. Dedeepya")
+  
+  const coConvenerWithPhone = {
+    ...coConvener,
+    // Add phone number here if it was missing, otherwise use the existing one
+    phone: coConvener.phone || "+91 96664 44100",
+  }
 
   return (
     <ConferenceLayout title="NCNTAIA" subtitle="Meet the dedicated team of experts organizing NCNTAIA 2025">
@@ -392,7 +393,7 @@ export default function CommitteePage() {
         {/* Event Co-ordinator */}
         <section>
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-[#1E293B] mb-4">Event Co-ordinator</h2>
+            <h2 className="text-3xl font-bold text-[#1E293B] mb-4">Organising Chair</h2>
           </div>
           <Card className="shadow-lg border-0 bg-gradient-to-br from-[#1D4ED8]/10 to-[#1D4ED8]/5 rounded-2xl overflow-hidden max-w-md mx-auto">
             <CardContent className="p-8 text-center">
@@ -436,14 +437,14 @@ export default function CommitteePage() {
           <Card className="shadow-lg border-0 bg-gradient-to-br from-[#F97316]/10 to-[#F97316]/5 rounded-2xl overflow-hidden max-w-md mx-auto mt-8">
             <CardContent className="p-6 text-center">
               <img
-                src={coConvener.imageUrl || "/placeholder.svg"}
-                alt={coConvener.name}
+                src={coConvenerWithPhone.imageUrl || "/placeholder.svg"}
+                alt={coConvenerWithPhone.name}
                 className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-[#F97316] shadow-sm" // Third largest size
               />
-              <h3 className="text-lg font-bold text-[#1E293B] mb-2">{coConvener.name}</h3>
+              <h3 className="text-lg font-bold text-[#1E293B] mb-2">{coConvenerWithPhone.name}</h3>
               <Badge className="bg-[#F97316] text-white mb-3">Co-Convener</Badge>
-              <p className="text-[#475569] text-sm">{coConvener.organization}</p>
-              <p className="text-[#475569] text-sm">{coConvener.department}</p>
+              <p className="text-[#475569] text-sm">{coConvenerWithPhone.organization}</p>
+              <p className="text-[#475569] text-sm">{coConvenerWithPhone.department}</p>
             </CardContent>
           </Card>
         </section>
@@ -649,22 +650,20 @@ export default function CommitteePage() {
                       <Mail className="w-6 h-6" />
                       <span className="font-mono text-xl font-bold">ncntaia-2025@sreenidhi.edu.in</span>
                     </div>
-                    <div className="flex items-center justify-center gap-3">
-                      <Phone className="w-6 h-6" />
-                      <span className="text-lg">+91-40-2378-1234</span>
-                    </div>
+                   
                     {mamatha?.phone && (
                       <div className="flex items-center justify-center gap-3">
                         <Phone className="w-6 h-6" />
                         <span className="text-lg">Dr. Mamatha Talakoti: {mamatha.phone}</span>
                       </div>
                     )}
-                    {dedeepya?.phone && (
+                    {coConvenerWithPhone?.phone && (
                       <div className="flex items-center justify-center gap-3">
                         <Phone className="w-6 h-6" />
-                        <span className="text-lg">P. Dedeepya (Student Co-ordinator): {dedeepya.phone}</span>
+                        <span className="text-lg">Dr. H Balaji: {coConvenerWithPhone.phone}</span>
                       </div>
                     )}
+                  
                     {vamanAkhil?.phone && (
                       <div className="flex items-center justify-center gap-3">
                         <Phone className="w-6 h-6" />
