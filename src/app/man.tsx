@@ -111,18 +111,19 @@ export default function ConferenceHomepage() {
             </p>
           </div>
 
-          <div
-            className={`mb-12 transform transition-all duration-1000 ${
-              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
-            style={{ transitionDelay: "900ms" }}
-          >
-            <Link href="/callforpapers">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl">
-              Get Registration Details
-            </Button>
-            </Link>
-          </div>
+         <div
+  className={`mb-12 transform transition-all duration-1000 ${
+    isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+  }`}
+  style={{ transitionDelay: "900ms" }}
+>
+  <Button
+    onClick={() => window.location.href = 'https://konfhub.com/ncntaia-snist'}
+    className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl"
+  >
+    Get Registration Details
+  </Button>
+</div>
 
           <p
             className={`text-lg md:text-xl text-slate-200 mb-5 drop-shadow-lg transform transition-all duration-1000 ${
@@ -196,9 +197,12 @@ function RenderNav({ isLoaded }: { isLoaded: boolean }) {
                 </Link>
               ))}
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-              Register
-            </Button>
+            <Button
+  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+  onClick={() => window.location.href = 'https://konfhub.com/ncntaia-snist'}
+>
+  Register
+</Button>
           </div>
         </div>
       </div>

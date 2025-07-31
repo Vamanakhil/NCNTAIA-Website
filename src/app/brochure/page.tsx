@@ -83,7 +83,7 @@ export default function BrochurePage() {
                   <a href="/brochure.pdf" download="NCNTAIA-2025-Brochure.pdf">
                     <Button className="bg-white text-[#1D4ED8] hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                       <Download className="w-6 h-6 mr-3" />
-                      Download Full Brochure PDF
+                      Download  Full Brochure PDF
                     </Button>
                   </a>
                   <Button
