@@ -544,12 +544,12 @@ export default function CFPSubmissionForm() {
                     <div className="space-y-2">
                       <h4 className="font-semibold text-blue-900">Paper Format Requirements</h4>
                       <ul className="text-sm text-blue-800 space-y-1">
-                        <li>• File Format: Word Document (.doc, .docx)</li>
+                        <li>• File Format: PDF only</li>
                         <li>• Page Length: 4-6 pages (including references)</li>
                         <li>• Font: Times New Roman, 12pt</li>
                         <li>• Margins: 1 inch on all sides</li>
                         <li>• Line Spacing: Single</li>
-                        <li>• File Size: Maximum 2MB</li>
+                        <li>• File Size: Maximum 5MB</li>
                       </ul>
                     </div>
                   </div>
@@ -559,11 +559,11 @@ export default function CFPSubmissionForm() {
                   <div className="p-8 border-2 border-dashed border-green-300 rounded-xl bg-green-50 text-center">
                     <Upload className="h-12 w-12 text-green-600 mx-auto mb-4" />
                     <Label htmlFor="paper-file" className="text-lg font-medium cursor-pointer text-gray-900">
-                      Upload Research Paper (Word Document)
+                      Upload Research Paper (PDF)
                       <span className="text-red-500 ml-1">*</span>
                     </Label>
-                    <Input id="paper-file" type="file" accept=".doc,.docx" required className="mt-4" />
-                    <p className="text-sm text-gray-600 mt-2">Word format only (.doc, .docx) • Maximum 2MB • 4-6 pages</p>
+                    <Input id="paper-file" type="file" accept=".pdf" required className="mt-4" />
+                    <p className="text-sm text-gray-600 mt-2">PDF format only • Maximum 5MB • 4-6 pages</p>
                   </div>
                 </div>
               </CardContent>
