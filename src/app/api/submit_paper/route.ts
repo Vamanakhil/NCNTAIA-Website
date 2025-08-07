@@ -31,13 +31,6 @@ async function getNextSequenceValue(sequenceName: string) {
 }
 
 export async function POST(request: NextRequest) {
-  const origin = request.headers.get('origin');
-  const allowedOrigins = ['http://localhost:3002','http://localhost:3001', 'https://ncntaia.sreenidhi.edu.in'];
-
-  if (!origin || !allowedOrigins.includes(origin)) {
-    return NextResponse.json({ message: 'Forbidden' }, { status: 403 });
-  }
-
   try {
     await dbConnect();
 
