@@ -1,27 +1,33 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-main().catch(err => console.log(err));
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ncntaia';
 
-async function main() {
-    if (process.env.MONGODB_URI) {
-        await mongoose.connect(process.env.MONGODB_URI);
-      } else {
-        throw new Error('MONGODB_URI environment variable is required');
-      }
+if (!MONGODB_URI) {
+  throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
-const FeedbackSchema = new mongoose.Schema({
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
-    email: { type: String, required: true },
-    mobile: { type: Number, required: true },
-    institution: { type: String, required: true },
-    designation: { type: String, required: true },
-    state: { type: String, required: true },
-    country: { type: String, required: true },
-})
+let cached = global.mongoose;
 
-const feedback = mongoose.models.Feedback || mongoose.model("Feedback", FeedbackSchema);
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
 
-export default feedback;
+async function dbConnect() {
+  if (cached.conn) {
+    return cached.conn;
+  }
 
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      return mongoose;
+    });
+  }
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+
+export default dbConnect;

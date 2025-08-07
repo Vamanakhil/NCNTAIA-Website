@@ -10,14 +10,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Plus, Trash2, Upload, FileText, Users, Award, CheckCircle, MapPin, Phone, User, Mail, Building, Globe, AlertCircle } from 'lucide-react'
+import { Plus, Trash2, Upload, FileText, Users, Award, CheckCircle, MapPin, Phone, User, Mail, Building, AlertCircle } from 'lucide-react'
 
 interface Author {
   id: string
   fullName: string
   email: string
   affiliation: string
-  country: string
+  city: string
   countryCode: string
   contactNumber: string
   isCorresponding: boolean
@@ -32,6 +32,7 @@ export default function CFPSubmissionForm() {
   const [otherTrack, setOtherTrack] = useState("")
   const [submissionType, setSubmissionType] = useState("")
   const [researchDomain, setResearchDomain] = useState("")
+  const [paperFile, setPaperFile] = useState<File | null>(null)
   const [checklistItems, setChecklistItems] = useState({
     originality: false,
     guidelines: false,
@@ -44,8 +45,8 @@ export default function CFPSubmissionForm() {
       fullName: "",
       email: "",
       affiliation: "",
-      country: "",
-      countryCode: "+1",
+      city: "",
+      countryCode: "+91",
       contactNumber: "",
       isCorresponding: true,
     },
@@ -60,8 +61,8 @@ export default function CFPSubmissionForm() {
       fullName: "",
       email: "",
       affiliation: "",
-      country: "",
-      countryCode: "+1",
+      city: "",
+      countryCode: "+91",
       contactNumber: "",
       isCorresponding: false,
     }
@@ -92,6 +93,67 @@ export default function CFPSubmissionForm() {
   }
 
   const allChecklistItemsChecked = Object.values(checklistItems).every(Boolean)
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('paperTitle', paperTitle);
+    formData.append('abstract', abstract);
+    formData.append('keywords', JSON.stringify(keywords.split(',').map(k => k.trim())));
+    formData.append('track', selectedTrack);
+    formData.append('submissionType', submissionType);
+    formData.append('researchDomain', researchDomain);
+    formData.append('authors', JSON.stringify(authors));
+    formData.append('otherTrack', otherTrack);
+    if (paperFile) {
+      formData.append('file', paperFile);
+    }
+
+    try {
+      const response = await fetch('/api/submit_paper', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Submission failed');
+      }
+
+      const data = await response.json();
+      alert(`Your response has been received. Thank you! Your Submission ID is: ${data.response.submissionId}`);
+      // Optionally reset form or navigate to a confirmation page
+      setCurrentStep(1); // Reset to first step
+      setPaperTitle('');
+      setAbstract('');
+      setKeywords('');
+      setSelectedTrack('');
+      setOtherTrack('');
+      setSubmissionType('');
+      setResearchDomain('');
+      setAuthors([
+        {
+          id: '1',
+          fullName: '',
+          email: '',
+          affiliation: '',
+          city: '',
+          countryCode: '+91',
+          contactNumber: '',
+          isCorresponding: true,
+        },
+      ]);
+      setChecklistItems({
+        originality: false,
+        guidelines: false,
+        reviewProcess: false,
+        contact: false,
+      });
+    } catch (error: unknown) {
+      alert(`Error: ${(error as Error).message}`);
+    }
+  };
 
   const nextStep = () => {
     if (currentStep < totalSteps) setCurrentStep(currentStep + 1)
@@ -163,7 +225,7 @@ export default function CFPSubmissionForm() {
           </CardContent>
         </Card>
 
-        <form className="space-y-8">
+        <form className="space-y-8" onSubmit={handleSubmit}>
           {/* Step 1: Paper Information */}
           {currentStep === 1 && (
             <Card className="border-l-4 border-l-blue-600 shadow-sm">
@@ -249,21 +311,10 @@ export default function CFPSubmissionForm() {
                         <SelectValue placeholder="Select research track" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="ai-health">AI in Healthcare</SelectItem>
-                        <SelectItem value="computer-vision">Computer Vision</SelectItem>
-                        <SelectItem value="nlp">Natural Language Processing</SelectItem>
-                        <SelectItem value="machine-learning">Machine Learning</SelectItem>
-                        <SelectItem value="data-science">Data Science & Analytics</SelectItem>
-                        <SelectItem value="cybersecurity">Cybersecurity</SelectItem>
-                        <SelectItem value="software-engineering">Software Engineering</SelectItem>
-                        <SelectItem value="hci">Human-Computer Interaction</SelectItem>
-                        <SelectItem value="networks">Networks & Distributed Systems</SelectItem>
-                        <SelectItem value="blockchain">Blockchain Technology</SelectItem>
-                        <SelectItem value="iot">Internet of Things</SelectItem>
-                        <SelectItem value="cloud-computing">Cloud Computing</SelectItem>
-                        <SelectItem value="mobile-computing">Mobile Computing</SelectItem>
-                        <SelectItem value="robotics">Robotics</SelectItem>
-                        <SelectItem value="quantum-computing">Quantum Computing</SelectItem>
+                        <SelectItem value="big-data-analytics">Big Data Analytics & Data Science Applications</SelectItem>
+                        <SelectItem value="cloud-iot-smart">Cloud Computing, IoT & Smart Applications</SelectItem>
+                        <SelectItem value="ai-ml">AI & ML</SelectItem>
+                        <SelectItem value="cybersecurity-blockchain">Cybersecurity, Blockchain & Access Control</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -274,33 +325,14 @@ export default function CFPSubmissionForm() {
                           Specify Research Track
                           <span className="text-red-500">*</span>
                         </Label>
-                        <Select value={otherTrack} onValueChange={setOtherTrack} required>
-                          <SelectTrigger className="p-4 border-2 border-orange-300 focus:border-orange-500">
-                            <SelectValue placeholder="Select specific research area" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="theoretical-cs">Theoretical Computer Science</SelectItem>
-                            <SelectItem value="computational-biology">Computational Biology</SelectItem>
-                            <SelectItem value="digital-forensics">Digital Forensics</SelectItem>
-                            <SelectItem value="embedded-systems">Embedded Systems</SelectItem>
-                            <SelectItem value="parallel-computing">Parallel Computing</SelectItem>
-                            <SelectItem value="computer-graphics">Computer Graphics</SelectItem>
-                            <SelectItem value="information-retrieval">Information Retrieval</SelectItem>
-                            <SelectItem value="multimedia-systems">Multimedia Systems</SelectItem>
-                            <SelectItem value="social-computing">Social Computing</SelectItem>
-                            <SelectItem value="educational-technology">Educational Technology</SelectItem>
-                            <SelectItem value="healthcare-informatics">Healthcare Informatics</SelectItem>
-                            <SelectItem value="financial-technology">Financial Technology</SelectItem>
-                            <SelectItem value="environmental-computing">Environmental Computing</SelectItem>
-                            <SelectItem value="augmented-reality">Augmented Reality</SelectItem>
-                            <SelectItem value="virtual-reality">Virtual Reality</SelectItem>
-                            <SelectItem value="edge-computing">Edge Computing</SelectItem>
-                            <SelectItem value="green-computing">Green Computing</SelectItem>
-                            <SelectItem value="accessibility-computing">Accessibility Computing</SelectItem>
-                            <SelectItem value="privacy-engineering">Privacy Engineering</SelectItem>
-                            <SelectItem value="custom">Custom (Specify in comments)</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <Input
+                          id="other-track"
+                          value={otherTrack}
+                          onChange={(e) => setOtherTrack(e.target.value)}
+                          placeholder="Please specify your research track"
+                          className="p-4 border-2 border-orange-300 focus:border-orange-500"
+                          required
+                        />
                       </div>
                     )}
                   </div>
@@ -439,16 +471,16 @@ export default function CFPSubmissionForm() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor={`country-${author.id}`} className="font-medium flex items-center gap-2 text-gray-700">
-                          <Globe className="h-4 w-4" />
-                          Country
+                        <Label htmlFor={`city-${author.id}`} className="font-medium flex items-center gap-2 text-gray-700">
+                          <MapPin className="h-4 w-4" />
+                          City
                           <span className="text-red-500">*</span>
                         </Label>
                         <Input
-                          id={`country-${author.id}`}
-                          value={author.country}
-                          onChange={(e) => updateAuthor(author.id, "country", e.target.value)}
-                          placeholder="United States"
+                          id={`city-${author.id}`}
+                          value={author.city}
+                          onChange={(e) => updateAuthor(author.id, "city", e.target.value)}
+                          placeholder="Hyderabad"
                           className="border-2 focus:border-purple-500"
                           required
                         />
@@ -470,16 +502,7 @@ export default function CFPSubmissionForm() {
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="+1">+1</SelectItem>
                             <SelectItem value="+91">+91</SelectItem>
-                            <SelectItem value="+44">+44</SelectItem>
-                            <SelectItem value="+86">+86</SelectItem>
-                            <SelectItem value="+81">+81</SelectItem>
-                            <SelectItem value="+49">+49</SelectItem>
-                            <SelectItem value="+33">+33</SelectItem>
-                            <SelectItem value="+61">+61</SelectItem>
-                            <SelectItem value="+55">+55</SelectItem>
-                            <SelectItem value="+7">+7</SelectItem>
                           </SelectContent>
                         </Select>
                         <Input
@@ -562,7 +585,7 @@ export default function CFPSubmissionForm() {
                       Upload Research Paper (Word Document)
                       <span className="text-red-500 ml-1">*</span>
                     </Label>
-                    <Input id="paper-file" type="file" accept=".doc,.docx" required className="mt-4" />
+                    <Input id="paper-file" type="file" accept=".doc,.docx" required className="mt-4" onChange={(e) => setPaperFile(e.target.files ? e.target.files[0] : null)} />
                     <p className="text-sm text-gray-600 mt-2">Word format only (.doc, .docx) • Maximum 2MB • 4-6 pages</p>
                   </div>
                 </div>
