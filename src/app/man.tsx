@@ -75,9 +75,9 @@ export default function ConferenceHomepage() {
               </div>
             </div>
 
-            {/* DST Logo */}
+            {/* anrf Logo */}
             <Image
-              src="/IMG/dart-science.jpg"
+              src="/IMG/anrf.png"
               alt="Dart Science"
               width={220}
               height={160}
