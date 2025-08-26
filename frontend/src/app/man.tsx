@@ -88,18 +88,18 @@ export default function ConferenceHomepage() {
               </div>
             </div>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/30 mb-4">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/30 mb-4">
               <Image
-                src="/IMG/anrf.png"
+                src="/IMG/anrf-logo.png"
                 alt="ANRF - Anusandhan National Research Foundation"
-                width={700}
-                height={250}
+                width={320}
+                height={240}
                 className="object-contain"
                 priority
               />
             </div>
             <div className="text-white text-xl font-bold mb-2 drop-shadow-lg">
-              <span className="text-blue-400">ANRF</span> Sponsored Conference
+              <span className="text-blue-400">ANeRF</span> Sponsored Conference
             </div>
           </div>
 
@@ -254,11 +254,9 @@ function RenderNav({ isLoaded }: { isLoaded: boolean }) {
                 </Link>
               ))}
             </div>
-            <Link href="https://konfhub.com/ncntaia-snist" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-                Register
-              </Button>
-            </Link>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+              Register
+            </Button>
           </div>
         </div>
       </div>
