@@ -82,9 +82,9 @@ export default function ConferenceHomepage() {
             {/* Scrolling Text */}
             <div className="overflow-hidden whitespace-nowrap text-white py-2 rounded-md mb-4 w-full">
               <div className="animate-marquee inline-block">
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Final Paper</span>
+                <span className="mx-4 font-semibold">📢August 30 is the last date to submit Final Paper</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Final Paper</span>
               </div>
             </div>
 
