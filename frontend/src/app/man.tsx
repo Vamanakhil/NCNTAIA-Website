@@ -90,7 +90,7 @@ export default function ConferenceHomepage() {
 
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/30 mb-4">
               <Image
-                src="/IMG/anrf-logo.png"
+                src="/IMG/midanrflogo.png"
                 alt="ANRF - Anusandhan National Research Foundation"
                 width={320}
                 height={240}
@@ -98,8 +98,8 @@ export default function ConferenceHomepage() {
                 priority
               />
             </div>
-            <div className="text-white text-xl font-bold mb-2 drop-shadow-lg">
-              <span className="text-blue-400">ANeRF</span> Sponsored Conference
+            <div className="text-white text-6xl font-bold mb-2 drop-shadow-lg">
+              <span className="text-blue-600">ANRF</span> Sponsored
             </div>
           </div>
 

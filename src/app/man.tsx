@@ -88,9 +88,9 @@ export default function ConferenceHomepage() {
               </div>
             </div>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/30 mb-4">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-1 shadow-2xl border border-white/30 mb-3">
               <Image
-                src="/IMG/anrf.png"
+                src="/IMG/anrf-logo_f.png"
                 alt="ANRF - Anusandhan National Research Foundation"
                 width={700}
                 height={250}
@@ -98,11 +98,12 @@ export default function ConferenceHomepage() {
                 priority
               />
             </div>
-            <div className="text-white text-xl font-bold mb-2 drop-shadow-lg">
-              <span className="text-blue-400">ANRF</span> Sponsored Conference
+            <div className="text-white text-4xl font-bold mb-2 drop-shadow-lg">
+              <span className="text-white text">Sponsored </span> 
             </div>
           </div>
 
+  
           <h1
             className={`text-4xl md:text-xl lg:text-5xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000  ${
               isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
