@@ -82,15 +82,18 @@ export default function ConferenceHomepage() {
             {/* Scrolling Text */}
             <div className="overflow-hidden whitespace-nowrap text-white py-2 rounded-md mb-4 w-full">
               <div className="animate-marquee inline-block">
-                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
-                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
-                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
+
+                <span className="mx-4 font-semibold">📢  August 30 is the last date to submit Final Paper!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Final Paper!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Final Paper!</span>
+
+
               </div>
             </div>
 
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/30 mb-4">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-1 shadow-2xl border border-white/30 mb-3">
               <Image
-                src="/IMG/mid-anrg.png"
+                src="/IMG/anrf-logo_f.png"
                 alt="ANRF - Anusandhan National Research Foundation"
                 width={700}
                 height={250}
@@ -99,10 +102,11 @@ export default function ConferenceHomepage() {
               />
             </div>
             <div className="text-white text-4xl font-bold mb-2 drop-shadow-lg">
-              Sponsored 
+              <span className="text-white text">Sponsored </span> 
             </div>
           </div>
 
+  
           <h1
             className={`text-4xl md:text-xl lg:text-5xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000  ${
               isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
