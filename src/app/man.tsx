@@ -93,7 +93,7 @@ export default function ConferenceHomepage() {
 
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-1 shadow-2xl border border-white/30 mb-3">
               <Image
-                src="/IMG/anrf-logo_f.png"
+                src="/IMG/mid-anrg.png"
                 alt="ANRF - Anusandhan National Research Foundation"
                 width={700}
                 height={250}
