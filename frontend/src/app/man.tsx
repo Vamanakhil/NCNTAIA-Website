@@ -98,7 +98,7 @@ export default function ConferenceHomepage() {
                 priority
               />
             </div>
-            <div className="text-white text-xl font-bold mb-2 drop-shadow-lg">
+            <div className="text-white text-3xl font-bold mb-2 drop-shadow-lg">
               <span className="text-blue-400">ANeRF</span> Sponsored Conference
             </div>
           </div>

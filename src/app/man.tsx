@@ -82,15 +82,15 @@ export default function ConferenceHomepage() {
             {/* Scrolling Text */}
             <div className="overflow-hidden whitespace-nowrap text-white py-2 rounded-md mb-4 w-full">
               <div className="animate-marquee inline-block">
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
-                <span className="mx-4 font-semibold">📢 August 8 is the last date to submit abstract!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
+                <span className="mx-4 font-semibold">📢 August 30 is the last date to submit Full Paper!</span>
               </div>
             </div>
 
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/30 mb-4">
               <Image
-                src="/IMG/anrf.png"
+                src="/IMG/mid-anrg.png"
                 alt="ANRF - Anusandhan National Research Foundation"
                 width={700}
                 height={250}
@@ -98,8 +98,8 @@ export default function ConferenceHomepage() {
                 priority
               />
             </div>
-            <div className="text-white text-xl font-bold mb-2 drop-shadow-lg">
-              <span className="text-blue-400">ANRF</span> Sponsored Conference
+            <div className="text-white text-4xl font-bold mb-2 drop-shadow-lg">
+              Sponsored 
             </div>
           </div>
 
