@@ -101,8 +101,9 @@ export default function ConferenceHomepage() {
                 priority
               />
             </div>
+            <p className="text-gray-300 text-lg font-medium mb-4 text-center">Government of India - New Delhi</p>
             <div className="text-white text-4xl font-bold mb-2 drop-shadow-lg">
-              <span className="text-white text">Sponsored </span> 
+              <span className="text-white text">Sponsored </span>
             </div>
           </div>
 
