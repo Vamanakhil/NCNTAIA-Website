@@ -48,7 +48,7 @@
 | 3      | 10:30–10:45 | Design and Implementation of an IoT-Based Smart Health Monitoring System     | Kotakonda Madhubabu | Offline |
 | 4      | 10:45–11:00 | Causes of Doxing, Impacts and Mitigation                                     | Prof. K. Shirisha | Online |
 | 5      | 11:00–11:15 | FixIT – The Community Report App                                             | Rithika M. | Online |
-| 6      | 11:15-11:30 | Cloud powered chat                                                           | Arini Revichandran| online |
+| 6      | 11:15-11:30 | Cloud powered chat                                                           | Arini Ravichandran| online |
 ---
 
 ## 📞 Technical Support  
