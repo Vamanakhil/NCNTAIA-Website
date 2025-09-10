@@ -43,12 +43,12 @@
 
 | S. No. | Time        | Paper Title                                                                 | Presenter(s) / Author(s)       | Mode   |
 |--------|-------------|-----------------------------------------------------------------------------|--------------------------------|--------|
-| 1      | 10:00–10:15 | Marketing Hub                                                               | Akhil Bandi | Online |
+| 1      | 10:00–10:15 | real time oil spill detaction and severity prediction using deep learning and remote scancing data                                                         | pavani bajjuri| Online |
 | 2      | 10:15–10:30 | A Unified Vision-Based Approach for Corrosion Detection: Benchmarking Classical ML Methods | Dr. Shraban Kumar Apat | Online |
 | 3      | 10:30–10:45 | Design and Implementation of an IoT-Based Smart Health Monitoring System     | Kotakonda Madhubabu | Offline |
 | 4      | 10:45–11:00 | Causes of Doxing, Impacts and Mitigation                                     | Prof. K. Shirisha | Online |
 | 5      | 11:00–11:15 | FixIT – The Community Report App                                             | Rithika M. | Online |
-
+| 6      | 11:15-11:30 | Cloud powered chat                                                           | Arini Revichandran| online |
 ---
 
 ## 📞 Technical Support  
