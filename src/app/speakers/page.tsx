@@ -67,7 +67,7 @@ export default function SpeakersPage() {
       name: "Dr. Chandra Sekhar Jatoth",
       title: "Assistant Professor, Information Technology",
       organization: "National Institute of Technology (NIT) Raipur",
-      image: "/IMG/imgs/Chandra-Sekhar-jatoth.jpg", // Fixed: use a relative path from /public/imgs/
+      image: "/IMG/imgs/dr.chandrakanth.jpeg", // Fixed: use a relative path from /public/imgs/
       expertise: ["Artificial Intelligence", "Image Processing"],
       bio: "Dr. Chandra Sekhar Jatoth is noted among the top 2% scientists worldwide, focusing on artificial intelligence and image processing. He has contributed to national projects and advanced technical education through research and committee leadership.",
       talk: "AI for Transformative Societal Impact: Opportunities in Image Processing"
